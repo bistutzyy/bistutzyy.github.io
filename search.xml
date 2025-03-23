@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2025/03/23/%E5%AE%9E%E9%AA%8C/"/>
-      <url>/2025/03/23/%E5%AE%9E%E9%AA%8C/</url>
-      
-        <content type="html"><![CDATA[<h1 id="桃之夭夭的个人导航站"><a href="#桃之夭夭的个人导航站" class="headerlink" title="桃之夭夭的个人导航站"></a>桃之夭夭的个人导航站</h1><h2 id="作者信息"><a href="#作者信息" class="headerlink" title="作者信息"></a>作者信息</h2><ul><li>网名：桃之夭夭</li><li>身份：BISTU 大一学生</li><li>个人标签：网瘾、摆烂仔、前端、linux、原神</li></ul><h2 id="网站简介"><a href="#网站简介" class="headerlink" title="网站简介"></a>网站简介</h2><p>这是一个简洁优雅的个人导航站，基于 <a href="https://github.com/zyyo">Zyyo</a> 的开源项目进行二次开发。</p><h2 id="技术特点"><a href="#技术特点" class="headerlink" title="技术特点"></a>技术特点</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 核心功能 --&gt;</span></span><br><span class="line">- 响应式布局</span><br><span class="line">- 分类导航</span><br><span class="line">- 个人档案展示</span><br><span class="line">- 弹幕系统</span><br></pre></td></tr></table></figure><h2 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h2><ol><li><p>个人档案</p><ul><li>基本信息展示</li><li>社交媒体链接</li><li>个人标签</li></ul></li><li><p>导航分类</p><ul><li>站点导航</li><li>项目展示</li><li>实用工具</li></ul></li><li><p>特色功能</p><ul><li>弹幕互动</li><li>电子木鱼</li><li>功德系统</li></ul></li></ol><h2 id="开发历程"><a href="#开发历程" class="headerlink" title="开发历程"></a>开发历程</h2><ul><li>2025.3：制作个人档案网站</li><li>2025.3：搭建导航站</li><li>2024.10：搭建第一个博客</li></ul><h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><ul><li>网站受微信、QQ的安全限制，建议使用浏览器访问</li><li>感谢您的到来！祝天天开心！</li></ul><h2 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h2><p>桃之夭夭 @ 2025</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>搭建属于你的个人网站</title>
       <link href="/2025/03/09/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/"/>
       <url>/2025/03/09/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</url>
