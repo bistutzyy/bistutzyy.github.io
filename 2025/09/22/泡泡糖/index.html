@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>桃之夭夭 | 桃之夭夭</title><meta name="author" content="bistutzyy"><meta name="copyright" content="bistutzyy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第一章 需求分析本次程序设计实践所做的实验项目主要是通过开发工具和 Jar 指令运行泡泡糖项目，体验泡泡糖项目的显示、消除、移动和积分等业务功能。 1.1 项目设计思路要设计出一款合格甚至优秀的游戏，在项目设计方面应该围绕游戏的可玩性，界面的可视性两方面出发。 1.1.1**可玩性**以我们所做的项目泡泡糖为例，可玩性体现在它的上手简单（只需要点击相同的泡泡糖便可消除），但复杂的运行逻辑又使它的形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="桃之夭夭">
+<meta property="og:url" content="https://bistutzyy.github.io/2025/09/22/%E6%B3%A1%E6%B3%A1%E7%B3%96/index.html">
+<meta property="og:site_name" content="桃之夭夭">
+<meta property="og:description" content="第一章 需求分析本次程序设计实践所做的实验项目主要是通过开发工具和 Jar 指令运行泡泡糖项目，体验泡泡糖项目的显示、消除、移动和积分等业务功能。 1.1 项目设计思路要设计出一款合格甚至优秀的游戏，在项目设计方面应该围绕游戏的可玩性，界面的可视性两方面出发。 1.1.1**可玩性**以我们所做的项目泡泡糖为例，可玩性体现在它的上手简单（只需要点击相同的泡泡糖便可消除），但复杂的运行逻辑又使它的形">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/1.png">
+<meta property="article:published_time" content="2025-09-22T15:13:00.760Z">
+<meta property="article:modified_time" content="2025-09-22T15:15:23.721Z">
+<meta property="article:author" content="bistutzyy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/1.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "https://bistutzyy.github.io/2025/09/22/%E6%B3%A1%E6%B3%A1%E7%B3%96/",
+  "image": "https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/1.png",
+  "datePublished": "2025-09-22T15:13:00.760Z",
+  "dateModified": "2025-09-22T15:15:23.721Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "bistutzyy",
+      "url": "https://bistutzyy.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://bistutzyy.github.io/2025/09/22/%E6%B3%A1%E6%B3%A1%E7%B3%96/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'medium_zoom',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '桃之夭夭',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">桃之夭夭</span></a><a class="nav-page-title" href="/"><span class="site-name">桃之夭夭</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-09-22T15:13:00.760Z" title="Created 2025-09-22 23:13:00">2025-09-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-09-22T15:15:23.721Z" title="Updated 2025-09-22 23:15:23">2025-09-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>5mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><h1 id="第一章-需求分析"><a href="#第一章-需求分析" class="headerlink" title="第一章 需求分析"></a><strong>第一章</strong> <strong>需求分析</strong></h1><p>本次程序设计实践所做的实验项目主要是通过开发工具和 Jar 指令运行泡泡糖项目，体验泡泡糖项目的显示、消除、移动和积分等业务功能。</p>
+<h2 id="1-1-项目设计思路"><a href="#1-1-项目设计思路" class="headerlink" title="1.1 项目设计思路"></a><strong>1.1</strong> <strong>项目设计思路</strong></h2><p>要设计出一款合格甚至优秀的游戏，在项目设计方面应该围绕游戏的可玩性，界面的可视性两方面出发。</p>
+<h3 id="1-1-1-可玩性"><a href="#1-1-1-可玩性" class="headerlink" title="1.1.1**可玩性**"></a><strong>1.1.1**</strong>可玩性**</h3><p>以我们所做的项目泡泡糖为例，可玩性体现在它的上手简单（只需要点击相同的泡泡糖便可消除），但复杂的运行逻辑又使它的形式十分丰富，同时我们所加入的特有的关卡设计也让这个游戏更符合当下青年想要挑战的心理。</p>
+<p>这款泡泡糖的可玩性的突出之处在于简单的消除设计和丰富的关卡设计和积分奖励。</p>
+<p>消除设计思路：点击屏幕上任意一个“泡泡糖”，与之相连的同颜色泡泡糖也会一并消除。因此在写消除方面的代码时，需要找到所有靠近点击目标的同色样式，需要反复利用循环来完成我们的设计。但是在前端界面却能十分简单地展示，这就是泡泡糖的可玩性。</p>
+<p>关卡设计和积分奖励思路：通过计算每局游戏的得分，来判断玩家是否能够通过关卡。同时在每次通关时我们还会给予玩家一定的通关积分奖励，这样一方面降低了玩家的通关难度，另一方面也让玩家更有动力玩我们这款泡泡糖游戏。</p>
+<h3 id="1-1-2-可视性"><a href="#1-1-2-可视性" class="headerlink" title="1.1.2 可视性"></a><strong>1.1.2</strong> <strong>可视性</strong></h3><p>单一的游戏展示界面会让玩家很快感受到无聊，从而降低对泡泡糖游戏的兴趣，因此，我们为泡泡糖的主界面设计了不同的主题风格，而切换主题的方式也相当简便，进一步完善了游戏的整体。</p>
+<p>展示如下：</p>
+<h2 id="1-2-玩家分析"><a href="#1-2-玩家分析" class="headerlink" title="1.2 玩家分析"></a><strong>1.2</strong> <strong>玩家分析</strong></h2><p>设计一款游戏首先要明确定位玩家群体，根据玩家对游戏的期望和需求进行游戏的设计和调整。因此，在软件实际开发前的准备工作中，玩家分析是十分关键的一步。</p>
+<p>以《消灭泡泡糖》这款游戏时为例，该游戏是为了做出一个耐玩有趣的休闲类消除小游戏，供玩家娱乐消遣。以下是一些包含的功能：</p>
+<ol>
+<li>随机泡泡糖：在完成每一关的挑战之后，系统将自动补全随机显示的各种颜色的泡泡糖；</li>
+<li>主题切换功能：玩家在进行游戏时，可以选择不同的主题进行，以此来增强游戏的个性化元素；</li>
+<li>目标分数的显示：玩家在开始每一关游戏时，可以知道本关游戏的目标分数，在消除泡泡糖的过程当中，会显示所得总分，让玩家清楚的看到自己的分数和目标分数；</li>
+<li>额外奖励积分：当每一关不存在可消灭的泡泡糖之后，可以进一步判断剩余泡泡糖是否可以进行额外的奖励机制。</li>
+</ol>
+<p>在后续《消灭泡泡糖》的设计中，也主要围绕这些功能来展开并完善。</p>
+<h1 id="第二章-概要设计"><a href="#第二章-概要设计" class="headerlink" title="第二章 概要设计"></a><strong>第二章</strong> <strong>概要设计</strong></h1><h2 id="2-1-设计思路"><a href="#2-1-设计思路" class="headerlink" title="2.1 设计思路"></a><strong>2.1</strong> <strong>设计思路</strong></h2><p>任何一个项目在实际开发前，都要有一个明确的思路和整体框架的设计，正如本项目目录所显示的那样，对于《消灭泡泡糖》的设计，我的思路是：</p>
+<p>①设计一个精美的界面和一个完整的游戏框架；</p>
+<p>②显示10*10的泡泡糖矩阵</p>
+<p>③消除泡泡糖（获取待消除的泡泡糖和封装待消除的泡泡糖）</p>
+<p>④泡泡糖的移动（移动垂直方向上和水平方向上的泡泡糖）</p>
+<p>⑤显示关卡积分（更新关卡分数和实现积分规则）</p>
+<p>根据上述描述设计的简单点的流程图：</p>
+<h2 id="2-2-游戏流程与整体框架（以及重点UML类图）"><a href="#2-2-游戏流程与整体框架（以及重点UML类图）" class="headerlink" title="2.2 游戏流程与整体框架（以及重点UML类图）"></a><strong>2.2</strong> <strong>游戏流程与整体框架（以及重点UML类图）</strong></h2><h3 id="2-2-1-游戏流程"><a href="#2-2-1-游戏流程" class="headerlink" title="2.2.1 游戏流程"></a><strong>2.2.1</strong> <strong>游戏流程</strong></h3><p>游戏流程（文字）：</p>
+<p>1.开始：玩家点击 “开始消除泡泡糖”。</p>
+<p>2.执行消除操作。</p>
+<p>3.判断是否消除：</p>
+<p>（1）是→计算得分→显示得分→判断是否通关：</p>
+<p>① 是→通关提示→刷新界面到下一关→回到执行消除操作；</p>
+<p>② 否→回到执行消除操作。</p>
+<p>（2）否→判断是否还能消除：</p>
+<p>① 是→回到执行消除操作；</p>
+<p>② 否→判断是否没通关可能：</p>
+<p> 是→游戏结束；</p>
+<p> 否→回到执行消除操作。</p>
+<p>流程图如下所示：</p>
+<h3 id="2-2-2-整体框架"><a href="#2-2-2-整体框架" class="headerlink" title="2.2.2 整体框架"></a><strong>2.2.2</strong> <strong>整体框架</strong></h3><p>本消灭泡泡糖游戏项目以Java作为核心开发语言，依托<strong>JavaFX</strong>技术实现游戏功能设计与界面渲染，同时由元素，主题和控制器搭建了整体架构，确保代码模块化、逻辑清晰，便于开发维护与功能扩展。</p>
+<p>1.模型：泡泡糖元素类Star（包含了泡泡糖的颜色、位置等信息）、MovedStar、得分等等</p>
+<p>2.主题：src-rex.layout-main_layout.fxml文件文件</p>
+<p>3.控制器：主要在MainForm文件中，设计了事件处理对象，负责相应玩家的输入，随之调整模型和视图。后续泡泡糖的消除和移动会广泛应用这方面。</p>
+<h3 id="2-2-3-重点UML类图展示"><a href="#2-2-3-重点UML类图展示" class="headerlink" title="2.2.3 重点UML类图展示"></a><strong>2.2.3 重点UML类图展示</strong></h3><h1 id="第三章-泡泡糖的显示"><a href="#第三章-泡泡糖的显示" class="headerlink" title="第三章 泡泡糖的显示"></a><strong>第三章</strong> <strong>泡泡糖的显示</strong></h1><h2 id="3-1-显示泡泡糖（定位PRJ-BU2-JAVA-002）"><a href="#3-1-显示泡泡糖（定位PRJ-BU2-JAVA-002）" class="headerlink" title="3.1 显示泡泡糖（定位PRJ-BU2-JAVA-002）"></a><strong>3.1</strong> <strong>显示泡泡糖（定位PRJ-BU2-JAVA-002）</strong></h2><p>核心组件：</p>
+<p>UML类图绘制：</p>
+<h3 id="3-1-1-创建《消灭泡泡糖》实体类"><a href="#3-1-1-创建《消灭泡泡糖》实体类" class="headerlink" title="3.1.1 创建《消灭泡泡糖》实体类"></a><strong>3.1.1</strong> <strong>创建《消灭泡泡糖》实体类</strong></h3><p>本场景需要实现在游戏界面上呈现5个不同颜色的泡泡糖，并且泡泡糖的位置由坐标决定，具体操作需要创建Star,Position等实体类，并设置其中的成员方法和成员变量，同时还需要创建枚举类型StarType（Star类中）,并且要添加返回整数类型的公共函数vaule。</p>
+<p>以下是关键代码摘取：</p>
+<p><strong>Position类</strong></p>
+<p><strong>```</strong></p>
+<p>package cn.campsg.practical.bubble.entity;</p>
+<p>public class Position {</p>
+<p>  private int row;  // 行索引</p>
+<p>  private int column; // 列索引</p>
+<p>  public Position() { // 无参构造方法</p>
+<p>​    super();</p>
+<p>​    // TODO Auto-generated constructor stub</p>
+<p>  }</p>
+<p>  public Position(int row, int column) { // 有参构造方法，初始化行列位置</p>
+<p>​    super();</p>
+<p>​    this.row = row;  // 赋值行索引</p>
+<p>​    this.column = column; // 赋值列索引</p>
+<p> }</p>
+<p>  public int getRow() { // 获取行索引</p>
+<p>​    return row;</p>
+<p>  }</p>
+<p>  public void setRow(int row) { // 设置行索引</p>
+<p>​    this.row = row;</p>
+<p>  }</p>
+<p>  public int getColumn() { // 获取列索引</p>
+<p>​    return column;</p>
+<p>  }</p>
+<p>  public void setColumn(int column) { // 设置列索引</p>
+<p>​    this.column = column;</p>
+<p>  }</p>
+<p>}</p>
+<p><strong>```</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://bistutzyy.github.io">bistutzyy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://bistutzyy.github.io/2025/09/22/%E6%B3%A1%E6%B3%A1%E7%B3%96/">https://bistutzyy.github.io/2025/09/22/%E6%B3%A1%E6%B3%A1%E7%B3%96/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/09/09/%E6%B3%A1%E6%B3%A1%E7%B3%96%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="泡泡糖小游戏——Java尝试"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">泡泡糖小游戏——Java尝试</div></div><div class="info-2"><div class="info-item-1">学校让写的项目，总结一下</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">bistutzyy</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bistutzyy"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/bistutzyy" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:173236231@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">第一章 需求分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E9%A1%B9%E7%9B%AE%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 项目设计思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E5%8F%AF%E7%8E%A9%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1**可玩性**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E5%8F%AF%E8%A7%86%E6%80%A7"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2 可视性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E7%8E%A9%E5%AE%B6%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 玩家分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%A6%82%E8%A6%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">第二章 概要设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%B8%B8%E6%88%8F%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6%EF%BC%88%E4%BB%A5%E5%8F%8A%E9%87%8D%E7%82%B9UML%E7%B1%BB%E5%9B%BE%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 游戏流程与整体框架（以及重点UML类图）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E6%B8%B8%E6%88%8F%E6%B5%81%E7%A8%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.2.1 游戏流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2.2 整体框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E9%87%8D%E7%82%B9UML%E7%B1%BB%E5%9B%BE%E5%B1%95%E7%A4%BA"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.2.3 重点UML类图展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B3%A1%E6%B3%A1%E7%B3%96%E7%9A%84%E6%98%BE%E7%A4%BA"><span class="toc-number">3.</span> <span class="toc-text">第三章 泡泡糖的显示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E6%98%BE%E7%A4%BA%E6%B3%A1%E6%B3%A1%E7%B3%96%EF%BC%88%E5%AE%9A%E4%BD%8DPRJ-BU2-JAVA-002%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 显示泡泡糖（定位PRJ-BU2-JAVA-002）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-%E5%88%9B%E5%BB%BA%E3%80%8A%E6%B6%88%E7%81%AD%E6%B3%A1%E6%B3%A1%E7%B3%96%E3%80%8B%E5%AE%9E%E4%BD%93%E7%B1%BB"><span class="toc-number">3.1.1.</span> <span class="toc-text">3.1.1 创建《消灭泡泡糖》实体类</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/22/%E6%B3%A1%E6%B3%A1%E7%B3%96/" title="Untitled">Untitled</a><time datetime="2025-09-22T15:13:00.760Z" title="Created 2025-09-22 23:13:00">2025-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/09/%E6%B3%A1%E6%B3%A1%E7%B3%96%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="泡泡糖小游戏——Java尝试">泡泡糖小游戏——Java尝试</a><time datetime="2025-09-09T03:25:22.082Z" title="Created 2025-09-09 11:25:22">2025-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/28/%E5%BE%A1%E5%9D%82%E7%BE%8E%E7%90%B4/" title="御坂美琴"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/%E5%BE%A1%E5%9D%82%E7%BE%8E%E7%90%B4250828%E5%8D%9A%E5%AE%A2/OIP-C.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="御坂美琴"/></a><div class="content"><a class="title" href="/2025/08/28/%E5%BE%A1%E5%9D%82%E7%BE%8E%E7%90%B4/" title="御坂美琴">御坂美琴</a><time datetime="2025-08-28T03:31:55.253Z" title="Created 2025-08-28 11:31:55">2025-08-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/28/%E7%99%BD%E9%93%B6%E5%BE%A1%E8%A1%8C/" title="只有受到眷顾的人，才能毫不掩饰"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/e04d08f52b66e9f4b7e96de9a22f50d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="只有受到眷顾的人，才能毫不掩饰"/></a><div class="content"><a class="title" href="/2025/02/28/%E7%99%BD%E9%93%B6%E5%BE%A1%E8%A1%8C/" title="只有受到眷顾的人，才能毫不掩饰">只有受到眷顾的人，才能毫不掩饰</a><time datetime="2025-02-28T02:04:04.586Z" title="Created 2025-02-28 10:04:04">2025-02-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/22/%E5%BC%B9%E5%B9%95%E6%8F%92%E4%BB%B6/" title="不用上b站也可以看弹幕"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/665200d08d44f05d5bda654cd6144bb.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不用上b站也可以看弹幕"/></a><div class="content"><a class="title" href="/2025/02/22/%E5%BC%B9%E5%B9%95%E6%8F%92%E4%BB%B6/" title="不用上b站也可以看弹幕">不用上b站也可以看弹幕</a><time datetime="2025-02-22T12:01:50.815Z" title="Created 2025-02-22 20:01:50">2025-02-22</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2025 By bistutzyy</span></div><div class="footer_custom_text">Hello,welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional and Simplified Chinese">简</button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://vercel-zeta-eight-46.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script>(() => {
+  btf.getScript('//code.tidio.co/kw2uvlikubnt1sb2rkcrlkpa219lzwz0.js').then(() => {
+    const isChatBtn = false
+    const isChatHideShow = false
+
+    if (isChatBtn) {
+      let isShow = false
+      const close = () => {
+        window.tidioChatApi.hide()
+        isShow = false
+      }
+      
+      const open = () => {
+        window.tidioChatApi.open()
+        window.tidioChatApi.show()
+        isShow = true
+      }
+
+      const onTidioChatApiReady = () => {
+        window.tidioChatApi.hide()
+        window.tidioChatApi.on("close", close)
+      }
+      if (window.tidioChatApi) {
+        window.tidioChatApi.on("ready", onTidioChatApiReady)
+      } else {
+        document.addEventListener("tidioChat-ready", onTidioChatApiReady)
+      }
+
+      window.chatBtnFn = () => {
+        if (!window.tidioChatApi) return
+        isShow ? close() : open()
+      }
+
+      document.getElementById('chat-btn').style.display = 'block'
+
+    } else if (isChatHideShow) {
+      window.chatBtn = {
+        hide: () => window.tidioChatApi && window.tidioChatApi.hide(),
+        show: () => window.tidioChatApi && window.tidioChatApi.show()
+      }
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="docsearch-wrap"><div id="docsearch" style="display:none"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css/dist/style.min.css"/><script src="https://cdn.jsdelivr.net/npm/@docsearch/js/dist/umd/index.min.js"></script><script>(() => {
+  docsearch(Object.assign({
+    appId: 'AVQAENZ4QB',
+    apiKey: '1797494608c4d2e528b97d2fdc665c4b',
+    indexName: 'bistutzyyio',
+    container: '#docsearch',
+    placeholder: 'Search for Posts',
+  }, null))
+
+  const handleClick = () => {
+    document.querySelector('.DocSearch-Button').click()
+  }
+
+  const searchClickFn = () => {
+    btf.addEventListenerPjax(document.querySelector('#search-button > .search'), 'click', handleClick)
+  }
+
+  searchClickFn()
+  window.addEventListener('pjax:complete', searchClickFn)
+})()</script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
