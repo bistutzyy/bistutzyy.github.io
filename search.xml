@@ -228,83 +228,6 @@
     
     
     <entry>
-      <title>Epic无法获取游戏解决方法</title>
-      <link href="/2025/01/03/Epic%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E6%B8%B8%E6%88%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-      <url>/2025/01/03/Epic%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E6%B8%B8%E6%88%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-      
-        <content type="html"><![CDATA[<h1 id="关于Epic账户无法下载更多免费游戏解决办法"><a href="#关于Epic账户无法下载更多免费游戏解决办法" class="headerlink" title="关于Epic账户无法下载更多免费游戏解决办法"></a>关于Epic账户无法下载更多免费游戏解决办法</h1><h2 id="Epic平台"><a href="#Epic平台" class="headerlink" title="Epic平台"></a>Epic平台</h2><p>Epic游戏商城网址：<a href="https://store.epicgames.com/">https://store.epicgames.com/</a></p><p>今天Epic放出来了我十分期待的游戏《幽灵行者2》，在28号早上就截止了，我也是迫不及待的去下载Epic平台来下载游戏。</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/934f06475827444c553116c633269b7.jpg"></p><p>然而，遇到了一个难题：</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/3ad6dec89f8937b7c22277d65f31ddb.jpg"></p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>为了解决这个问题，我也上网查了一下，网上各路大神各显神通，有关方法我也试了一下，在此分享一下：</p><h3 id="1-网络问题"><a href="#1-网络问题" class="headerlink" title="1. 网络问题"></a>1. 网络问题</h3><p>任何平台所遇到的任何事情都可能跟网络问题相关，如果遇到无法解决的问题可以首先试一试刷新网络或者更换网络。</p><h3 id="2-代理"><a href="#2-代理" class="headerlink" title="2. 代理"></a>2. 代理</h3><p>我们都知道，这些平台都需要一些科学上网工具，如果遇到上述问题，可以挂一个代理或者检查一下自己的代理。</p><div class="note danger flat"><h3 id="3-不要用校园网（重）"><a href="#3-不要用校园网（重）" class="headerlink" title="3. 不要用校园网（重）"></a>3. 不要用校园网（重）</h3><p>没错，这就是我所遇到的问题。在我尝试了网上各路大神的方法依然无效之后，终于在一个评论区找到答案，也让我欣喜若狂。</p></div><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/a2eb1c029fb08e54f4296ce4e9fbd22.jpg"></p><h3 id="4-去浏览器官网商店"><a href="#4-去浏览器官网商店" class="headerlink" title="4. 去浏览器官网商店"></a>4. 去浏览器官网商店</h3><p>在我最上面给到的网址复制到浏览器上便是Epic的官方商城，可以在浏览器上登录来获取这个游戏。</p><div class="note info flat"><p>以上便是我所找到的一些方法</p></div><h2 id="附在最后"><a href="#附在最后" class="headerlink" title="附在最后"></a>附在最后</h2><p>如果无法解决或嫌麻烦，可以与steam上购买，冬季大促-75%后用40多元就可以了。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Epic </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2025/01/03/hello-world/"/>
-      <url>/2025/01/03/hello-world/</url>
-      
-        <content type="html"><![CDATA[<div class="note primary flat"><p>欢迎访问我的博客</p><p>此博客主要用来记录生活和一些学习内容</p><p>感谢来访，祝天天开心！</p></div><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/a837df5f5ddc4f75bfe46d1a489757eb.jpeg"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 分享 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> blog </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>github搭建博客笔记</title>
-      <link href="/2025/01/03/github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/"/>
-      <url>/2025/01/03/github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[<div class="note primary flat"><p>Welcome to my first passage!</p></div><h1 id="任务1-关于搭建github博客的步骤学习笔记"><a href="#任务1-关于搭建github博客的步骤学习笔记" class="headerlink" title="任务1. 关于搭建github博客的步骤学习笔记"></a>任务1. 关于搭建github博客的步骤学习笔记</h1><p><strong>(所用设备：拯救者y9000p)</strong></p><h2 id="准备工作——注册github"><a href="#准备工作——注册github" class="headerlink" title="准备工作——注册github"></a>准备工作——注册github</h2><p>首先，打开第一个网址github.com，来到github的主界面（如下）</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/01.png"></p><p>点击右上角进行注册（使用邮箱注册），登录</p><h2 id="STEP1-—-进行-（重要）"><a href="#STEP1-—-进行-（重要）" class="headerlink" title="STEP1 — 进行 （重要）"></a>STEP1 — 进行 <span class='p red'>Fork</span>（重要）</h2><p>打开第三个网址mzlogin.github.io，进入以下页面：</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/02.png"></p><p>上图即为博客的模版，往下拉</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/03.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/04.png"></p><p>接下来开始进行fork</p><p>注：往下拉会有fork指南，接下来讲述详细步骤</p><p>点击fork选项，然后create a new fork，<strong>由于个人账号已经完成，以下部分图片来自王鑫学长教学截取</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/05.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/06.png"></p><p>Description描述自己博客，由自己撰写，可选可不选</p><p>进行设置settings</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/07.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/08.png"></p><p>fork后在浏览器网址搜索自己的网站（如上图：ZenQG.github.io），进入以下界面，加载不出来需等几分钟</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/09.png"></p><div class="note success flat"><p>当出现这个界面，证明前面的步骤已经成功，第一步完成</p></div><h2 id="STEP2——处理细节，装饰博客"><a href="#STEP2——处理细节，装饰博客" class="headerlink" title="STEP2——处理细节，装饰博客"></a>STEP2——处理细节，装饰博客</h2><h3 id="第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改"><a href="#第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改" class="headerlink" title="第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改"></a>第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改</h3><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/10.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/11.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/12.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/13.png"></p><h3 id="第二步——修改配置——装饰自己博客"><a href="#第二步——修改配置——装饰自己博客" class="headerlink" title="第二步——修改配置——装饰自己博客"></a>第二步——修改配置——装饰自己博客</h3><p>首先，打开_config.yml,进入编辑</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/14.png"></p><p>然后，根据自己的要求更改一些内容</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/15.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/16.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/17.png"></p><p>接着是修改评论方面，打开<a href="https://giscus.app/zh-CN">https://giscus.app/zh-CN</a></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/18.png"></p><p>完成相应要求</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/19.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/20.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/21.png"></p><p>确保自己的账号是公开的</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/22.png"></p><p>打开settings，在打开后下拉找到discussions勾选，勾选后出现绿色的set up discussions进行点击，账号已完成，故省略</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/23.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/24.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/25.png"></p><p><strong>discussions打开成功，然后安装giscus这个app</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/26.png"></p><p><strong>打开后进行下载和配置，完成后来到以下界面</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/27.png"></p><p><strong>重新回到<a href="https://giscus.app/zh-CN进行仓库验证">https://giscus.app/zh-CN进行仓库验证</a></strong></p><p><img src="https://cdn.jsdelivr.net/gh/bistutzyy/tzyy/image-20241001150351940.png" alt="image-20241001150351940"></p><p><strong>验证成功后进入discussion分类</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/28.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/29.png"></p><p><strong>然后启用giscus，首先进行复制（由于不兼容可不复制后面比对修改）</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/30.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/31.png"></p><p><strong>接下来是进行谷歌数据分析，打开第二个网址analytics.google.com，没有账号需自己注册+科学上网工具</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/32.png"></p><p><strong>谷歌分析展示的页面由于为手机操作效果不好，建议使用电脑，展示如下</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/33.jpg"></p><p><strong><em>将自己的id输入后完成配置操作</em></strong></p><div class="note success flat"><p>以上便是博客的初步搭建</p></div><h3 id="附1-关于部分文件夹的讲解"><a href="#附1-关于部分文件夹的讲解" class="headerlink" title="附1.关于部分文件夹的讲解"></a>附1.关于部分文件夹的讲解</h3><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/34.png"></p><h3 id="附2-修改博客图标网址"><a href="#附2-修改博客图标网址" class="headerlink" title="附2.修改博客图标网址"></a>附2.修改博客图标网址</h3><p><a href="https://primer.style/foundations/icons/">https://primer.style/foundations/icons/</a></p><h3 id="附3-关于新建文件和上传文件"><a href="#附3-关于新建文件和上传文件" class="headerlink" title="附3.关于新建文件和上传文件"></a>附3.关于新建文件和上传文件</h3><p><img ssrc="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/35.png"></p><p><strong>关于新建文件和文件夹的方法如下</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/36.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/37.png"></p><h3 id="附4-关于谷歌账号的注册"><a href="#附4-关于谷歌账号的注册" class="headerlink" title="附4.关于谷歌账号的注册"></a>附4.关于谷歌账号的注册</h3><p><em>谷歌账号注册需要科学上网工具，正常注册是需邮箱和国外手机号</em></p><p><em>根据我的尝试（用的vivo手机）可以通过下载谷歌商店（google play）在里面注册可以跳过手机号验证</em></p><p><strong>不过以上只是个人尝试，不一定有用，建议上网查查解决方案</strong></p><h3 id="附5-成果展示"><a href="#附5-成果展示" class="headerlink" title="附5.成果展示"></a>附5.成果展示</h3><p><strong>下面是个人搭建博客的结果</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/38.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/39.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/40.png"></p><h3 id="附6-感悟分享"><a href="#附6-感悟分享" class="headerlink" title="附6.感悟分享"></a>附6.感悟分享</h3><div class="note primary flat"><p>学习github的搭建是对我的一个考验，当我真正想要去完成这个博客的搭建…有勇气去向王鑫学长请教问题，有毅力去完成这么一个完整的文件。在这其中自然是有方方面面的不足，但我还是很欣喜能够完成这么一个对我而言看起来高深莫测的一个方向，也让我有自信去面对学习上的挑战。感谢王鑫学长的帮助，感谢iflab学长们提供的学习机会！</p></div><h1 id="感谢观看！！"><a href="#感谢观看！！" class="headerlink" title="感谢观看！！"></a>感谢观看！！</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> blog </tag>
-            
-            <tag> github </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>最喜欢的小说男主——唐舞麟</title>
       <link href="/2025/01/03/%E5%94%90%E8%88%9E%E9%BA%9F%E2%80%94%E2%80%94%E5%9B%9E%E4%B8%8D%E5%8E%BB%E7%9A%84%E4%BD%95%E6%AD%A2%E6%98%AF%E6%97%B6%E9%97%B4/"/>
       <url>/2025/01/03/%E5%94%90%E8%88%9E%E9%BA%9F%E2%80%94%E2%80%94%E5%9B%9E%E4%B8%8D%E5%8E%BB%E7%9A%84%E4%BD%95%E6%AD%A2%E6%98%AF%E6%97%B6%E9%97%B4/</url>
@@ -347,6 +270,83 @@
         <tags>
             
             <tag> 李商隐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Epic无法获取游戏解决方法</title>
+      <link href="/2025/01/03/Epic%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E6%B8%B8%E6%88%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+      <url>/2025/01/03/Epic%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96%E6%B8%B8%E6%88%8F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="关于Epic账户无法下载更多免费游戏解决办法"><a href="#关于Epic账户无法下载更多免费游戏解决办法" class="headerlink" title="关于Epic账户无法下载更多免费游戏解决办法"></a>关于Epic账户无法下载更多免费游戏解决办法</h1><h2 id="Epic平台"><a href="#Epic平台" class="headerlink" title="Epic平台"></a>Epic平台</h2><p>Epic游戏商城网址：<a href="https://store.epicgames.com/">https://store.epicgames.com/</a></p><p>今天Epic放出来了我十分期待的游戏《幽灵行者2》，在28号早上就截止了，我也是迫不及待的去下载Epic平台来下载游戏。</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/934f06475827444c553116c633269b7.jpg"></p><p>然而，遇到了一个难题：</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/3ad6dec89f8937b7c22277d65f31ddb.jpg"></p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>为了解决这个问题，我也上网查了一下，网上各路大神各显神通，有关方法我也试了一下，在此分享一下：</p><h3 id="1-网络问题"><a href="#1-网络问题" class="headerlink" title="1. 网络问题"></a>1. 网络问题</h3><p>任何平台所遇到的任何事情都可能跟网络问题相关，如果遇到无法解决的问题可以首先试一试刷新网络或者更换网络。</p><h3 id="2-代理"><a href="#2-代理" class="headerlink" title="2. 代理"></a>2. 代理</h3><p>我们都知道，这些平台都需要一些科学上网工具，如果遇到上述问题，可以挂一个代理或者检查一下自己的代理。</p><div class="note danger flat"><h3 id="3-不要用校园网（重）"><a href="#3-不要用校园网（重）" class="headerlink" title="3. 不要用校园网（重）"></a>3. 不要用校园网（重）</h3><p>没错，这就是我所遇到的问题。在我尝试了网上各路大神的方法依然无效之后，终于在一个评论区找到答案，也让我欣喜若狂。</p></div><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/a2eb1c029fb08e54f4296ce4e9fbd22.jpg"></p><h3 id="4-去浏览器官网商店"><a href="#4-去浏览器官网商店" class="headerlink" title="4. 去浏览器官网商店"></a>4. 去浏览器官网商店</h3><p>在我最上面给到的网址复制到浏览器上便是Epic的官方商城，可以在浏览器上登录来获取这个游戏。</p><div class="note info flat"><p>以上便是我所找到的一些方法</p></div><h2 id="附在最后"><a href="#附在最后" class="headerlink" title="附在最后"></a>附在最后</h2><p>如果无法解决或嫌麻烦，可以与steam上购买，冬季大促-75%后用40多元就可以了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Epic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>github搭建博客笔记</title>
+      <link href="/2025/01/03/github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/"/>
+      <url>/2025/01/03/github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<div class="note primary flat"><p>Welcome to my first passage!</p></div><h1 id="任务1-关于搭建github博客的步骤学习笔记"><a href="#任务1-关于搭建github博客的步骤学习笔记" class="headerlink" title="任务1. 关于搭建github博客的步骤学习笔记"></a>任务1. 关于搭建github博客的步骤学习笔记</h1><p><strong>(所用设备：拯救者y9000p)</strong></p><h2 id="准备工作——注册github"><a href="#准备工作——注册github" class="headerlink" title="准备工作——注册github"></a>准备工作——注册github</h2><p>首先，打开第一个网址github.com，来到github的主界面（如下）</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/01.png"></p><p>点击右上角进行注册（使用邮箱注册），登录</p><h2 id="STEP1-—-进行-（重要）"><a href="#STEP1-—-进行-（重要）" class="headerlink" title="STEP1 — 进行 （重要）"></a>STEP1 — 进行 <span class='p red'>Fork</span>（重要）</h2><p>打开第三个网址mzlogin.github.io，进入以下页面：</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/02.png"></p><p>上图即为博客的模版，往下拉</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/03.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/04.png"></p><p>接下来开始进行fork</p><p>注：往下拉会有fork指南，接下来讲述详细步骤</p><p>点击fork选项，然后create a new fork，<strong>由于个人账号已经完成，以下部分图片来自王鑫学长教学截取</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/05.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/06.png"></p><p>Description描述自己博客，由自己撰写，可选可不选</p><p>进行设置settings</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/07.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/08.png"></p><p>fork后在浏览器网址搜索自己的网站（如上图：ZenQG.github.io），进入以下界面，加载不出来需等几分钟</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/09.png"></p><div class="note success flat"><p>当出现这个界面，证明前面的步骤已经成功，第一步完成</p></div><h2 id="STEP2——处理细节，装饰博客"><a href="#STEP2——处理细节，装饰博客" class="headerlink" title="STEP2——处理细节，装饰博客"></a>STEP2——处理细节，装饰博客</h2><h3 id="第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改"><a href="#第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改" class="headerlink" title="第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改"></a>第一步：删除CNAME文件，此文件与域名有关，有需要可自行修改</h3><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/10.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/11.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/12.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/13.png"></p><h3 id="第二步——修改配置——装饰自己博客"><a href="#第二步——修改配置——装饰自己博客" class="headerlink" title="第二步——修改配置——装饰自己博客"></a>第二步——修改配置——装饰自己博客</h3><p>首先，打开_config.yml,进入编辑</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/14.png"></p><p>然后，根据自己的要求更改一些内容</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/15.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/16.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/17.png"></p><p>接着是修改评论方面，打开<a href="https://giscus.app/zh-CN">https://giscus.app/zh-CN</a></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/18.png"></p><p>完成相应要求</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/19.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/20.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/21.png"></p><p>确保自己的账号是公开的</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/22.png"></p><p>打开settings，在打开后下拉找到discussions勾选，勾选后出现绿色的set up discussions进行点击，账号已完成，故省略</p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/23.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/24.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/25.png"></p><p><strong>discussions打开成功，然后安装giscus这个app</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/26.png"></p><p><strong>打开后进行下载和配置，完成后来到以下界面</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/27.png"></p><p><strong>重新回到<a href="https://giscus.app/zh-CN进行仓库验证">https://giscus.app/zh-CN进行仓库验证</a></strong></p><p><img src="https://cdn.jsdelivr.net/gh/bistutzyy/tzyy/image-20241001150351940.png" alt="image-20241001150351940"></p><p><strong>验证成功后进入discussion分类</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/28.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/29.png"></p><p><strong>然后启用giscus，首先进行复制（由于不兼容可不复制后面比对修改）</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/30.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/31.png"></p><p><strong>接下来是进行谷歌数据分析，打开第二个网址analytics.google.com，没有账号需自己注册+科学上网工具</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/32.png"></p><p><strong>谷歌分析展示的页面由于为手机操作效果不好，建议使用电脑，展示如下</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/33.jpg"></p><p><strong><em>将自己的id输入后完成配置操作</em></strong></p><div class="note success flat"><p>以上便是博客的初步搭建</p></div><h3 id="附1-关于部分文件夹的讲解"><a href="#附1-关于部分文件夹的讲解" class="headerlink" title="附1.关于部分文件夹的讲解"></a>附1.关于部分文件夹的讲解</h3><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/34.png"></p><h3 id="附2-修改博客图标网址"><a href="#附2-修改博客图标网址" class="headerlink" title="附2.修改博客图标网址"></a>附2.修改博客图标网址</h3><p><a href="https://primer.style/foundations/icons/">https://primer.style/foundations/icons/</a></p><h3 id="附3-关于新建文件和上传文件"><a href="#附3-关于新建文件和上传文件" class="headerlink" title="附3.关于新建文件和上传文件"></a>附3.关于新建文件和上传文件</h3><p><img ssrc="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/35.png"></p><p><strong>关于新建文件和文件夹的方法如下</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/36.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/37.png"></p><h3 id="附4-关于谷歌账号的注册"><a href="#附4-关于谷歌账号的注册" class="headerlink" title="附4.关于谷歌账号的注册"></a>附4.关于谷歌账号的注册</h3><p><em>谷歌账号注册需要科学上网工具，正常注册是需邮箱和国外手机号</em></p><p><em>根据我的尝试（用的vivo手机）可以通过下载谷歌商店（google play）在里面注册可以跳过手机号验证</em></p><p><strong>不过以上只是个人尝试，不一定有用，建议上网查查解决方案</strong></p><h3 id="附5-成果展示"><a href="#附5-成果展示" class="headerlink" title="附5.成果展示"></a>附5.成果展示</h3><p><strong>下面是个人搭建博客的结果</strong></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/38.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/39.png"></p><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/40.png"></p><h3 id="附6-感悟分享"><a href="#附6-感悟分享" class="headerlink" title="附6.感悟分享"></a>附6.感悟分享</h3><div class="note primary flat"><p>学习github的搭建是对我的一个考验，当我真正想要去完成这个博客的搭建…有勇气去向王鑫学长请教问题，有毅力去完成这么一个完整的文件。在这其中自然是有方方面面的不足，但我还是很欣喜能够完成这么一个对我而言看起来高深莫测的一个方向，也让我有自信去面对学习上的挑战。感谢王鑫学长的帮助，感谢iflab学长们提供的学习机会！</p></div><h1 id="感谢观看！！"><a href="#感谢观看！！" class="headerlink" title="感谢观看！！"></a>感谢观看！！</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2025/01/03/hello-world/"/>
+      <url>/2025/01/03/hello-world/</url>
+      
+        <content type="html"><![CDATA[<div class="note primary flat"><p>欢迎访问我的博客</p><p>此博客主要用来记录生活和一些学习内容</p><p>感谢来访，祝天天开心！</p></div><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/a837df5f5ddc4f75bfe46d1a489757eb.jpeg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
             
         </tags>
       
