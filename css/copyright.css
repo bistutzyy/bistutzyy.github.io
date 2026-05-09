@@ -1,169 +1,268 @@
 /* ============================================
-   银行卡风格 post-copyright 美化
+   3D 银行卡翻转 post-copyright
    灵感来源：Akilarの糖果屋
    ============================================ */
 
-/* 基础卡片结构 */
+/* 3D 透视容器 */
 .post-copyright {
-  position: relative;
-  margin: 2rem 0 1rem !important;
-  padding: 24px 28px !important;
+  perspective: 1200px;
+  margin: 2.5rem 0 1rem !important;
+  padding: 0 !important;
   border: none !important;
-  border-radius: 20px !important;
-  background: linear-gradient(135deg, #2b3a67 0%, #1a2a4a 30%, #0f1f3d 60%, #1a3a5c 100%);
-  color: #e0e6f0;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(15, 31, 61, 0.25),
-              0 2px 8px rgba(0, 0, 0, 0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: 'SF Pro Display', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
 }
 
 .post-copyright:hover {
-  box-shadow: 0 16px 48px rgba(15, 31, 61, 0.4),
-              0 4px 12px rgba(0, 0, 0, 0.2) !important;
-  transform: translateY(-4px);
+  box-shadow: none !important;
+  transform: none !important;
 }
 
-/* --- 银行卡高光条纹 --- */
-.post-copyright::before {
-  content: '' !important;
-  position: absolute;
-  top: -60%;
-  left: -30%;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* --- 右下角微光 --- */
-.post-copyright::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  right: -20px;
-  width: 180px;
-  height: 160px;
-  background: radial-gradient(ellipse, rgba(120, 180, 255, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* --- 芯片装饰（银行卡标志性元素） --- */
-.post-copyright__author::before {
-  content: '';
-  display: block;
-  float: right;
-  width: 42px;
-  height: 34px;
-  margin-top: -4px;
-  margin-left: 16px;
-  background: linear-gradient(135deg, #d4af37 0%, #f0d060 40%, #c9a62c 100%);
-  border-radius: 6px;
-  opacity: 0.85;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4),
-              0 2px 6px rgba(0, 0, 0, 0.3);
-  flex-shrink: 0;
-}
-
-/* 芯片内嵌纹理 */
+/* 隐藏原装饰 */
+.post-copyright::before,
+.post-copyright::after,
+.post-copyright__author::before,
 .post-copyright__author::after {
-  content: '';
-  position: absolute;
-  top: 28px;
-  right: 32px;
-  width: 42px;
-  height: 34px;
-  background:
-    linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.1) 42%, transparent 42%),
-    linear-gradient(180deg, transparent 56%, rgba(0,0,0,0.1) 56%, rgba(0,0,0,0.1) 58%, transparent 58%),
-    linear-gradient(90deg, transparent 35%, rgba(255,255,255,0.15) 35%, rgba(255,255,255,0.15) 40%, transparent 40%);
-  border-radius: 6px;
-  pointer-events: none;
-  z-index: 3;
-}
-
-/* --- 各行样式 --- */
-.post-copyright .post-copyright-meta {
-  color: #8aa4cc !important;
-  font-weight: 600 !important;
-  font-size: 0.85em;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  position: relative;
-  z-index: 2;
-}
-
-.post-copyright .post-copyright-meta i {
-  color: #d4af37 !important;
-  margin-right: 6px !important;
-  filter: drop-shadow(0 1px 2px rgba(212, 175, 55, 0.4));
-}
-
-.post-copyright .post-copyright-info {
-  color: #e8eef6 !important;
-  font-weight: 400;
-  padding-left: 10px !important;
-  position: relative;
-  z-index: 2;
-}
-
-.post-copyright .post-copyright-info a {
-  color: #c0d8ff !important;
-  text-decoration: none !important;
-  transition: color 0.3s;
-  word-break: break-all;
-}
-
-.post-copyright .post-copyright-info a:hover {
-  color: #fff !important;
-  text-decoration: underline !important;
-}
-
-/* --- 各行之间的分割线效果 --- */
-.post-copyright > div {
-  position: relative;
-  padding: 6px 0;
-  z-index: 2;
-}
-
-.post-copyright > div + div {
-  border-top: 1px solid rgba(138, 164, 204, 0.15);
-}
-
-/* --- 覆盖主题默认图标 --- */
-.post-copyright .post-copyright__author .post-copyright-meta::before {
   display: none !important;
 }
 
-/* ============================================
-   暗色模式
-   ============================================ */
-[data-theme="dark"] .post-copyright {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f0f23 60%, #1a1a3e 100%);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
-              0 2px 8px rgba(0, 0, 0, 0.3);
+.post-copyright > div {
+  border-top: none !important;
 }
 
-[data-theme="dark"] .post-copyright .post-copyright-meta {
-  color: #7799cc !important;
+/* ---- 卡片翻转层 ---- */
+.card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-[data-theme="dark"] .post-copyright .post-copyright-info {
-  color: #ccd8f0 !important;
+.post-copyright:hover .card-inner {
+  transform: rotateY(180deg);
 }
 
-[data-theme="dark"] .post-copyright .post-copyright-info a {
-  color: #99bbf0 !important;
+/* ---- 正面 & 背面共用 ---- */
+.card-front,
+.card-back {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 22px 28px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 40px rgba(15, 31, 61, 0.3),
+              0 2px 8px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 }
 
-[data-theme="dark"] .post-copyright__author::before {
+/* ---- 卡片正面：深蓝渐变银行卡 ---- */
+.card-front {
+  background: linear-gradient(135deg, #1e3a5f 0%, #153259 25%, #0c2744 50%, #1a345a 75%, #1e3a5f 100%);
+  color: #e0eaf6;
+  z-index: 2;
+}
+
+/* 卡面高光条纹 */
+.card-front::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.card-front::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  width: 180px;
+  height: 160px;
+  background: radial-gradient(ellipse, rgba(100, 160, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 芯片 */
+.card-chip {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  width: 48px;
+  height: 38px;
+  background: linear-gradient(135deg, #d4af37 0%, #f7d86c 40%, #c9a62c 100%);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.5),
+              0 2px 8px rgba(0,0,0,0.3);
+  z-index: 3;
+}
+
+.card-chip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background:
+    linear-gradient(180deg, transparent 38%, rgba(0,0,0,0.1) 38%, rgba(0,0,0,0.1) 42%, transparent 42%),
+    linear-gradient(180deg, transparent 58%, rgba(0,0,0,0.1) 58%, rgba(0,0,0,0.1) 62%, transparent 62%),
+    linear-gradient(90deg, transparent 32%, rgba(255,255,255,0.2) 32%, rgba(255,255,255,0.2) 38%, transparent 38%);
+}
+
+/* 卡号样式 */
+.card-number {
+  margin-top: 6px;
+  margin-bottom: 12px;
+  font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+  font-size: 1.15em;
+  letter-spacing: 3px;
+  color: #d0e0f8;
+  word-spacing: 8px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* 卡片内容行 */
+.card-front .post-copyright-meta {
+  color: #7899bb !important;
+  font-weight: 500 !important;
+  font-size: 0.78em;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.card-front .post-copyright-meta i {
+  color: #d4af37 !important;
+  margin-right: 6px !important;
+}
+
+.card-front .post-copyright-info {
+  color: #e0eaf6 !important;
+  font-weight: 400;
+  font-size: 0.92em;
+  padding-left: 4px !important;
+}
+
+.card-front .post-copyright-info a {
+  color: #c8ddf8 !important;
+  text-decoration: none !important;
+}
+
+.card-front .post-copyright-info a:hover {
+  color: #fff !important;
+}
+
+/* 有效期/品牌标识 */
+.card-brand {
+  position: absolute;
+  bottom: 20px;
+  right: 28px;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+/* ---- 卡片背面 ---- */
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e3a5f 0%, #153259 25%, #0c2744 50%, #1a345a 75%, #1e3a5f 100%);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #c0d8f8;
+}
+
+/* 背面磁条 */
+.card-back::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(180deg, #111 0%, #1a1a1a 50%, #111 100%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* 背面签名条 */
+.card-back::after {
+  content: 'Authorized Signature';
+  position: absolute;
+  top: 100px;
+  left: 28px;
+  right: 120px;
+  height: 28px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 3px;
+  font-size: 0.6em;
+  letter-spacing: 1px;
+  padding: 6px 10px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+}
+
+.card-back-text {
+  position: relative;
+  z-index: 2;
+  margin-top: 60px;
+  font-size: 0.85em;
+  text-align: center;
+  line-height: 1.8;
+  color: #889db8;
+}
+
+.card-back-text a {
+  color: #d4af37 !important;
+  text-decoration: none;
+}
+
+/* ---- 内容行容器 ---- */
+.card-front .card-info-row {
+  position: relative;
+  z-index: 2;
+  padding: 5px 0;
+}
+
+.card-front .card-info-row + .card-info-row {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ---- 暗色模式 ---- */
+[data-theme="dark"] .card-front,
+[data-theme="dark"] .card-back {
+  background: linear-gradient(135deg, #0f1629 0%, #0d1a30 25%, #081428 50%, #0f1629 100%);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5),
+              0 2px 8px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .card-front .post-copyright-meta {
+  color: #6688aa !important;
+}
+
+[data-theme="dark"] .card-front .post-copyright-info {
+  color: #c0d0e8 !important;
+}
+
+[data-theme="dark"] .card-chip {
   background: linear-gradient(135deg, #b8941f 0%, #d4af37 40%, #a0822a 100%);
   box-shadow: inset 0 1px 2px rgba(255,255,255,0.3),
-              0 0 12px rgba(212, 175, 55, 0.3);
+              0 0 16px rgba(212,175,55,0.3);
 }
