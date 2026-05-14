@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Claude Code 手机版实战：多轮修正 Word 文档直到完美提交</title>
+      <link href="/2026/05/14/Claude-Code-%E6%89%8B%E6%9C%BA%E7%89%88-docx-%E7%BC%96%E8%BE%91%E5%AE%9E%E6%88%98/"/>
+      <url>/2026/05/14/Claude-Code-%E6%89%8B%E6%9C%BA%E7%89%88-docx-%E7%BC%96%E8%BE%91%E5%AE%9E%E6%88%98/</url>
+      
+        <content type="html"><![CDATA[<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>今天在手机上完成了一次完整的文档修改工作流：一份数据库实验报告需要做格式规范化，通过 <mark class="hl-label Code">Claude</mark> 直接在手机上操作 <u>.docx</u> 文件，经过两轮迭代修改，最终达到提交标准。</p><div class="note info flat"><p>整个过程全部在手机上完成，没有打开电脑上的 Word。</p></div><hr><h2 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h2><p>手头有份《数据库原理及应用 实验二》的实验报告，上一轮已经改过主要问题（<span class='p green'>NVARCHAR、N 前缀、触发器集合写法、权限管理</span>），但还有几处格式细节需要打磨：</p><div class="table-container"><table><thead><tr><th>序号</th><th>位置</th><th>问题</th></tr></thead><tbody><tr><td>1</td><td>第（二）1 存储过程</td><td><span class='p red'>GO</span> 放在了注释后面</td></tr><tr><td>2</td><td>第（二）2 存储过程</td><td><span class='p red'>WHERE 子句</span> 缺少分号</td></tr><tr><td>3</td><td>第（四）1 安全管理</td><td><span class='p red'>CREATE LOGIN</span> 后缺 GO</td></tr><tr><td>4</td><td>第（四）3 授权</td><td><span class='p red'>GRANT</span> 前缺 USE/GO</td></tr></tbody></table></div><hr><h2 id="修正过程"><a href="#修正过程" class="headerlink" title="修正过程"></a>修正过程</h2><h3 id="第一轮：四个格式问题"><a href="#第一轮：四个格式问题" class="headerlink" title="第一轮：四个格式问题"></a>第一轮：四个格式问题</h3><div class="timeline  blue"><div class='timeline-item headline'>        <div class='timeline-item-title'>          <div class='item-circle'><p>第一轮修改</p></div>        </div>      </div></div><h3 id="第二轮：两个小细节"><a href="#第二轮：两个小细节" class="headerlink" title="第二轮：两个小细节"></a>第二轮：两个小细节</h3><details class="folding-tag" blue><summary> 点击展开第二轮修改详情 </summary>              <div class='content'>              <p>第一轮改完后审查，又发现两个可优化的地方：</p><p><strong>1. 存储过程内部语句补分号</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PRINT N<span class="string">&#x27;年龄错误&#x27;</span>;   <span class="comment">-- 补分号</span></span><br><span class="line"><span class="keyword">WHERE</span> 年龄 <span class="operator">=</span> @年龄;   <span class="comment">-- 补分号</span></span><br></pre></td></tr></table></figure></p><p><strong>2. 四.5 节点 USE 后加 GO</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">USE StudentsXXXX;</span><br><span class="line">GO  <span class="comment">-- 新增</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">CREATE TABLE</span> <span class="keyword">TO</span> u3;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALTER</span> <span class="keyword">ON</span> SCHEMA::dbo <span class="keyword">TO</span> u3;</span><br><span class="line">GO</span><br></pre></td></tr></table></figure></p>              </div>            </details><hr><h2 id="技术原理"><a href="#技术原理" class="headerlink" title="技术原理"></a>技术原理</h2><div class="tip info"><p>很多人不知道：<span class='p blue'>.docx 文件本质上是一个 ZIP 压缩包</span>，里面是一堆 XML 文件。所以可以直接解压 → 改 XML → 打包回去，完全不需要 Word。</p></div><div class="tabs"><div class="nav-tabs no-default"></div><div class="tab-contents"></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><hr><h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-"  style="width: 100%%" aria-valuenow="100%" aria-valuemin="0" aria-valuemax="100"><p>green</p></div></div><div class="table-container"><table><thead><tr><th>检查项</th><th>状态</th></tr></thead><tbody><tr><td>SQL 逻辑正确</td><td><span class='p green'>✓</span></td></tr><tr><td>GO 批处理规范</td><td><span class='p green'>✓</span></td></tr><tr><td>触发器集合写法</td><td><span class='p green'>✓</span></td></tr><tr><td>权限管理完整</td><td><span class='p green'>✓</span></td></tr><tr><td>分号/格式细节</td><td><span class='p green'>✓</span></td></tr><tr><td>结论说明严谨</td><td><span class='p green'>✓</span></td></tr></tbody></table></div><div class="note success flat"><p><strong>最终评价：</strong> 这版作业逻辑正确、SQL 规范、说明合理，可以提交。</p></div><hr><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这次体验证明了在手机上用 AI 完成文档精细修改完全可行：</p><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>.docx = ZIP + XML，直接编辑比打开 Word 更快</p>            </div><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>多轮迭代修正，每轮都有明确的验收标准</p>            </div><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>全程手机完成，从修改到发送一气呵成</p>            </div><div class='checkbox'><input type="checkbox" />            <p>以后实验报告、作业文档都可以这么改</p>            </div><span class='p cyan'>工具组合：</span><mark class="hl-label Code">Claude</mark> + <mark class="hl-label 脚本">Python</mark> + <mark class="hl-label green">cc-connect</mark><hr><div class='poem'><div class='poem-title'>无题</div><div class='poem-author'> 李商隐</div><p>昨夜星辰昨夜风，画楼西畔桂堂东。<br>身无彩凤双飞翼，心有灵犀一点通。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> AI编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Claude Code </tag>
+            
+            <tag> AI工具 </tag>
+            
+            <tag> 效率提升 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Claude Code + cc-connect 打通微信，手机远程操控电脑写代码</title>
       <link href="/2026/05/14/cc-connect-%E6%89%8B%E6%9C%BA%E7%94%B5%E8%84%91%E5%8F%8C%E7%AB%AF%E8%BF%9E%E9%80%9A/"/>
       <url>/2026/05/14/cc-connect-%E6%89%8B%E6%9C%BA%E7%94%B5%E8%84%91%E5%8F%8C%E7%AB%AF%E8%BF%9E%E9%80%9A/</url>
