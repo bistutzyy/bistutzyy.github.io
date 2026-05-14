@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Claude Code + cc-connect 打通微信，手机远程操控电脑写代码</title>
+      <link href="/2026/05/14/cc-connect-%E6%89%8B%E6%9C%BA%E7%94%B5%E8%84%91%E5%8F%8C%E7%AB%AF%E8%BF%9E%E9%80%9A/"/>
+      <url>/2026/05/14/cc-connect-%E6%89%8B%E6%9C%BA%E7%94%B5%E8%84%91%E5%8F%8C%E7%AB%AF%E8%BF%9E%E9%80%9A/</url>
+      
+        <content type="html"><![CDATA[<span class='p red'>用手机指挥电脑上的 Claude Code 写代码、发文件、改配置，全程无需碰键盘。</span>这篇教程记录我如何通过 cc-connect 把 Claude Code 接入微信，实现双端联动。<div class="tip info"><p>本文所有操作均在 Windows 11 + Node.js 22 环境下完成，微信端使用个人微信（ilink 通道）。</p></div><h2 id="一、什么是-cc-connect？"><a href="#一、什么是-cc-connect？" class="headerlink" title="一、什么是 cc-connect？"></a>一、什么是 cc-connect？</h2><div class="note primary no-icon flat"><p>cc-connect 是一个开源桥接工具，将本地 AI 编程助手（Claude Code、Cursor、Gemini CLI 等）接入微信、飞书、Telegram 等聊天平台，让你随时随地从手机远程操控 AI Agent。</p><div class="tag link"><a class="link-card" title="cc-connect 项目仓库" href="https://github.com/chenhg5/cc-connect"><div class="left"><img src="/img/link.png"/></div><div class="right"><p class="text">cc-connect 项目仓库</p><p class="url">https://github.com/chenhg5/cc-connect</p></div></a></div></div><details class="folding-tag" blue><summary> 支持平台一览 </summary>              <div class='content'>              <div class="table-container"><table><thead><tr><th>平台</th><th>支持状态</th></tr></thead><tbody><tr><td>飞书/Lark</td><td>✅ 稳定</td></tr><tr><td>Telegram</td><td>✅ 稳定</td></tr><tr><td>钉钉</td><td>✅ 稳定</td></tr><tr><td>Slack</td><td>✅ 稳定</td></tr><tr><td>Discord</td><td>✅ 稳定</td></tr><tr><td>微信个人号</td><td>✅ Beta</td></tr><tr><td>企业微信</td><td>✅ 稳定</td></tr><tr><td>QQ</td><td>✅ 稳定</td></tr><tr><td>LINE</td><td>✅ 稳定</td></tr></tbody></table></div>              </div>            </details><p>核心能力概括：</p><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>手机微信直接与 Claude Code 对话</p>            </div><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>支持图片 / 文件 / 语音发送到电脑</p>            </div><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>电脑端文件可回传到微信聊天</p>            </div><div class='checkbox checked blue'><input type="checkbox" checked="checked"/>            <p>斜杠命令操控 Agent (</p>            </div><kbd>/</kbd><mark class="hl-label blue">mode</mark><kbd>/</kbd><mark class="hl-label blue">new</mark><kbd>/</kbd><mark class="hl-label blue">stop</mark> 等) %}<div class='checkbox checked blue'><input type="checkbox" checked="checked"/>            <p>无需公网 IP，扫码即连</p>            </div><hr><h2 id="二、安装配置"><a href="#二、安装配置" class="headerlink" title="二、安装配置"></a>二、安装配置</h2><h3 id="Step-1-—-安装-Beta-版"><a href="#Step-1-—-安装-Beta-版" class="headerlink" title="Step 1 — 安装 Beta 版"></a>Step 1 — 安装 Beta 版</h3><div class="note warning flat"><p>微信个人号渠道仅在 <strong>Beta 版</strong> 中可用。必须用 <code>@beta</code> 标签安装！</p></div><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cc-connect@beta</span><br></pre></td></tr></table></figure><p>安装完成后验证：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc-connect --version</span><br></pre></td></tr></table></figure><h3 id="Step-2-—-初始化配置"><a href="#Step-2-—-初始化配置" class="headerlink" title="Step 2 — 初始化配置"></a>Step 2 — 初始化配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc-connect init</span><br></pre></td></tr></table></figure><p>这会在 <code>~/.cc-connect/</code> 下生成 <code>config.toml</code>。我当前的完整配置如下：</p><details class="folding-tag" green><summary> 点击展开 config.toml 完整配置 </summary>              <div class='content'>              <figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cc-connect configuration</span></span><br><span class="line"><span class="attr">language</span> = <span class="string">&quot;zh&quot;</span></span><br><span class="line"><span class="attr">attachment_send</span> = <span class="string">&quot;on&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[display]</span></span><br><span class="line"><span class="attr">thinking_messages</span> = <span class="literal">false</span></span><br><span class="line"><span class="attr">tool_messages</span> = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="section">[log]</span></span><br><span class="line"><span class="attr">level</span> = <span class="string">&quot;info&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[projects]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;default&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[projects.agent]</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;claudecode&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[projects.agent.options]</span></span><br><span class="line"><span class="attr">work_dir</span> = <span class="string">&quot;C:/Users/lenovo&quot;</span></span><br><span class="line"><span class="attr">mode</span> = <span class="string">&quot;default&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[projects.platforms]]</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;weixin&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="section">[projects.platforms.options]</span></span><br><span class="line"><span class="attr">token</span> = <span class="string">&quot;YOUR_TOKEN&quot;</span></span><br><span class="line"><span class="attr">base_url</span> = <span class="string">&quot;https://ilinkai.weixin.qq.com&quot;</span></span><br><span class="line"><span class="attr">account_id</span> = <span class="string">&quot;YOUR_ACCOUNT&quot;</span></span><br><span class="line"><span class="attr">allow_from</span> = <span class="string">&quot;*&quot;</span></span><br></pre></td></tr></table></figure>              </div>            </details><mark class="hl-label blue">关键配置</mark> `attachment_send = "on"` 是文件回传的总开关，不开启则电脑无法向手机发文件。### Step 3 — 微信扫码绑定<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc-connect weixin setup --project default</span><br></pre></td></tr></table></figure><p>终端会弹出二维码 → 用微信扫码确认 → token 自动写入配置。<span class='p green'>无需手动填 token。</span></p><hr><h2 id="三、启动与使用"><a href="#三、启动与使用" class="headerlink" title="三、启动与使用"></a>三、启动与使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc-connect</span><br></pre></td></tr></table></figure><p>启动后，打开微信向机器人发消息即可交互。我把工作目录定位在 <code>C:/Users/lenovo</code>，这样 Claude Code 的所有能力（skills、memory、项目上下文）都能在手机上调用。</p><div class="img-wrap"><div class="img-bg"><img class="img" src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/AI%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/1c108889732d721111aa7c9b76eaee4c.jpg" alt="微信端聊天效果截图一"/></div><span class="image-caption">微信端聊天效果截图一</span></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/AI%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/1fc28c042ce32d72b0cb28b31e05120a.jpg" alt="微信端聊天效果截图二"/></div><span class="image-caption">微信端聊天效果截图二</span></div><hr><h2 id="四、微信端斜杠命令"><a href="#四、微信端斜杠命令" class="headerlink" title="四、微信端斜杠命令"></a>四、微信端斜杠命令</h2><p>在微信对话框直接输入以下命令控制 Agent：</p><div class="tabs"><div class="nav-tabs no-default"></div><div class="tab-contents"></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><hr><h2 id="五、文件互传"><a href="#五、文件互传" class="headerlink" title="五、文件互传"></a>五、文件互传</h2><h3 id="📱-手机-→-电脑"><a href="#📱-手机-→-电脑" class="headerlink" title="📱 手机 → 电脑"></a>📱 手机 → 电脑</h3><p>直接在微信发文件/图片/语音给我，cc-connect 自动保存到 <code>.cc-connect/attachments/</code> 并交给 Claude Code 处理。</p><h3 id="💻-电脑-→-手机"><a href="#💻-电脑-→-手机" class="headerlink" title="💻 电脑 → 手机"></a>💻 电脑 → 手机</h3><p>在终端使用 <code>cc-connect send</code> 命令将文件发回微信：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 发送文件</span></span><br><span class="line">cc-connect send --file <span class="string">&quot;C:/Users/lenovo/Desktop/report_final.docx&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送图片</span></span><br><span class="line">cc-connect send --image <span class="string">&quot;C:/path/to/screenshot.png&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 同时发送文件+图片</span></span><br><span class="line">cc-connect send --file <span class="string">&quot;report.pdf&quot;</span> --image <span class="string">&quot;chart.png&quot;</span></span><br></pre></td></tr></table></figure><div class="tip success"><p>发文件用 <strong>绝对路径</strong> 最稳妥，避免路径解析问题。</p></div><hr><h2 id="六、语音消息"><a href="#六、语音消息" class="headerlink" title="六、语音消息"></a>六、语音消息</h2><p>cc-connect 还支持语音互转。在 <code>config.toml</code> 中添加：</p><figure class="highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[speech]</span></span><br><span class="line"><span class="attr">enabled</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">provider</span> = <span class="string">&quot;groq&quot;</span></span><br><span class="line"><span class="attr">language</span> = <span class="string">&quot;zh&quot;</span></span><br><span class="line"><span class="section">[speech.groq]</span></span><br><span class="line">  <span class="attr">api_key</span> = <span class="string">&quot;gsk_你的API密钥&quot;</span></span><br><span class="line">  <span class="attr">model</span> = <span class="string">&quot;whisper-large-v3&quot;</span></span><br></pre></td></tr></table></figure><div class='checkbox checked'><input type="checkbox" checked="checked"/>            <p>微信语音自动转文字发给 Claude Code</p>            </div><div class='checkbox checked'><input type="checkbox" checked="checked"/>            <p>Claude Code 回复可选转语音播报</p>            </div><div class='checkbox'><input type="checkbox" />            <p>需要安装 ffmpeg 依赖</p>            </div><hr><h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><div class="note success no-icon flat"><p>现在我不在家也能用手机指挥电脑上的 Claude Code：</p><ul><li>📝 写博客、改代码、搜文件</li><li>📎 电脑生成的文件一键发到手机</li><li>🎤 开车时用语音下指令</li><li>⏰ 定时任务自动运行</li></ul><p>整套配置不超过 <strong>30 分钟</strong>，强烈推荐给所有用 Claude Code 的朋友。</p></div><details class="folding-tag" cyan><summary> 常见问题 FAQ </summary>              <div class='content'>              <p><strong>Q: 微信收不到机器人消息？</strong></p><p>检查 cc-connect 服务是否在运行，以及 token 是否过期（重新扫码即可）。</p><p><strong>Q: 文件发送失败？</strong></p><p>确认 <code>attachment_send = &quot;on&quot;</code> 已设置，并使用 Beta 版 <code>cc-connect@beta</code>。</p><p><strong>Q: 语音转文字不工作？</strong></p><p>需要安装 ffmpeg 并配置 Groq API key。Groq 提供免费额度，足够日常使用。</p><p><strong>Q: 可以多台手机同时接入吗？</strong></p><p>可以。多个项目在配置中分不同的 <code>[[projects]]</code> 即可。</p>              </div>            </details><hr><div class="btns ">            <a class="button" href='https://github.com/chenhg5/cc-connect' title='项目仓库'><i class='fa-brands fa-github'></i>项目仓库</a><a class="button" href='https://bistutzyy.github.io' title='我的博客'><i class='fa-solid fa-home'></i>我的博客</a>          </div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Claude Code </tag>
+            
+            <tag> cc-connect </tag>
+            
+            <tag> 微信 </tag>
+            
+            <tag> 效率工具 </tag>
+            
+            <tag> 远程控制 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CC Switch —— 一站管理 Claude Code / Codex / Gemini CLI 的瑞士军刀</title>
       <link href="/2026/05/13/cc-switch-ai-cli%E7%AE%A1%E7%90%86%E7%A5%9E%E5%99%A8/"/>
       <url>/2026/05/13/cc-switch-ai-cli%E7%AE%A1%E7%90%86%E7%A5%9E%E5%99%A8/</url>
@@ -20,9 +53,9 @@
       
         <tags>
             
-            <tag> AI工具 </tag>
-            
             <tag> Claude Code </tag>
+            
+            <tag> AI工具 </tag>
             
             <tag> Skills </tag>
             
@@ -158,9 +191,9 @@
       
         <tags>
             
-            <tag> AI工具 </tag>
-            
             <tag> Claude Code </tag>
+            
+            <tag> AI工具 </tag>
             
             <tag> DeepSeek </tag>
             
@@ -284,9 +317,9 @@
       
         <tags>
             
-            <tag> AI工具 </tag>
-            
             <tag> Claude Code </tag>
+            
+            <tag> AI工具 </tag>
             
             <tag> Skills </tag>
             
