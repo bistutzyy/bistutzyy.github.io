@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>新博客搭建记——用 Vibe Coding 打造「桃之夭夭の创作屋」</title>
+      <link href="/2026/05/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E2%80%94%E2%80%94Vibe-Coding%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C%E5%B1%8B/"/>
+      <url>/2026/05/17/%E6%96%B0%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E2%80%94%E2%80%94Vibe-Coding%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%88%9B%E4%BD%9C%E5%B1%8B/</url>
+      
+        <content type="html"><![CDATA[<div class="note primary flat"><p>今天花了一整天，用 <strong>Vibe Coding</strong> 的方式从零搭建了一个全新的个人主页——<span class='p blue'>桃之夭夭の创作屋</span>。</p><p>地址：<mark class="hl-label blue"><a href="https://tzyy11.vercel.app">https://tzyy11.vercel.app</a></mark></p><p>这篇文章记录整个过程：为什么要建新站、三款 AI 工具如何分工协作、功能设计上的巧思，以及部署上线后的效果展示。</p></div><hr><h2 id="为什么要建新站"><a href="#为什么要建新站" class="headerlink" title="为什么要建新站"></a>为什么要建新站</h2><p>在这之前，我已经有两个博客了：</p><ol><li><strong><span class='p blue'>bistutzyy.github.io</span></strong> — Hexo + Butterfly 主题，写了近两年</li><li><strong><span class='p purple'>blog1-reimu.vercel.app</span></strong> — Hexo + Reimu 主题，年初刚搭的</li></ol><p>两个博客各有特色，但问题也很明显：<span class='p red'>内容分散、管理碎片化、主题定制受限</span>。每次想改个样式都要折腾半天配置，Butterfly 标签和 Reimu 标签还不互通，迁移文章特别痛苦。</p><div class="note info flat"><p>核心诉求其实很简单：<strong>有一个完全由自己掌控的空间</strong>——不为搜索引擎优化，不为流量变现，纯粹用来记录和展示。</p></div><p>所以今天，我决定用 AI 工具从零搭建第三个站——一个完全自由的个人创作屋。</p><hr><h2 id="搭建过程：三款-AI-工具的接力赛"><a href="#搭建过程：三款-AI-工具的接力赛" class="headerlink" title="搭建过程：三款 AI 工具的接力赛"></a>搭建过程：三款 AI 工具的接力赛</h2><p>整个搭建过程像一个接力赛，三款 AI 工具各司其职：</p><details class="folding-tag" blue><summary> OpenAI Codex — 主页整体设计 </summary>              <div class='content'>              <p>Codex 负责了主页的视觉框架。我给它的需求是”设计一个带侧边栏的个人主页，日系插画风格，清新可爱”。</p><p>它生成了完整的 <code>index.html</code>：</p><ul><li>左侧导航栏（首页/归档/文章/说说/相册/友链/留言墙）</li><li>中间大标题 “Hello” 渐变色 + 手写体</li><li>双语标语 “有趣的灵魂终会遇见”</li><li>右侧动漫少女角色立绘（金发蓝眼，蝴蝶结）</li><li>三只漂浮小猫插图（画画的、坐在花旁的、抱书读的）</li><li>版权信息 + 社交图标</li></ul><p>Codex 对视觉风格的理解很到位——柔和的浅色调、圆角设计、合适的留白，整个首页没有写一行 CSS 我就拿到了成品。</p>              </div>            </details><details class="folding-tag" green><summary> Cursor — 碎片化页面设计 </summary>              <div class='content'>              <p>Cursor 负责了独立页面的设计：</p><ul><li><strong>相册页</strong>：卡片式布局，点击进入子页面查看照片网格</li><li><strong>友链页</strong>：本站信息 + 友链卡片，带说明和申请指南</li><li><strong>留言墙</strong>：渐变色标题、表单三栏布局、留言卡片带糖果色头像和系统标签</li><li><strong>归档页</strong>：年份时间线，文章按日期排列</li></ul><p>Cursor 的优势在于碎片化任务——给它一个具体页面的需求，它能快速生成符合整体风格的代码。</p>              </div>            </details><details class="folding-tag" purple><summary> Claude Code + DeepSeek V4 Pro — 文章体系与全局调优 </summary>              <div class='content'>              <p>Claude Code 负责了最核心的内容系统：</p><ol><li><strong>build_content.py 构建脚本</strong>：从 Markdown 文章 + frontmatter 生成文章列表、详情页、说说页、归档时间线</li><li><strong>21 篇文章迁移</strong>：从 Hexo 博客的 Butterfly 标签语法全部转为标准 Markdown，保留核心内容和配图</li><li><strong>CSS 全局调优</strong>：macOS 终端风格代码块、艺术字语录、表格样式、移动端适配、侧边栏折叠</li><li><strong>双语支持</strong>：每篇文章中英双语，页面级语言切换</li></ol><p>整个过程中，我在微信上给 Claude Code 发需求，它分析、生成、我审查修改，全程没有打开传统 IDE。</p>              </div>            </details><hr><h2 id="功能设计亮点"><a href="#功能设计亮点" class="headerlink" title="功能设计亮点"></a>功能设计亮点</h2><h3 id="1-首页"><a href="#1-首页" class="headerlink" title="1. 首页"></a>1. 首页</h3><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/AI%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/homepage-hero.png" alt="首页效果" style="width:100%"></p><p>首页是整个创作屋的门面——Codex 设计的动漫少女插画 + 手绘小猫 + 渐变色标题，营造出”有趣的灵魂终会遇见”的氛围。</p><h3 id="2-文章系统"><a href="#2-文章系统" class="headerlink" title="2. 文章系统"></a>2. 文章系统</h3><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/AI%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/homepage-articles.png" alt="文章界面" style="width:100%"></p><p>文章列表用卡片式布局，每篇文章显示标题、摘要、日期、字数、阅读量、预计阅读时间。支持中英双语切换，代码块用了 macOS 终端风格——暗色背景 + 顶部标题栏 + 三色圆点 + 语法高亮。</p><div class="note success flat"><p>21 篇文章从 Hexo 博客完整迁移，Butterfly 标签语法全部转为标准 Markdown，去掉了封面图和装饰效果，保留核心内容和配图。新增了《关于桃之夭夭の创作屋》这篇介绍文。</p></div><h3 id="3-说说-—-随机艺术效果"><a href="#3-说说-—-随机艺术效果" class="headerlink" title="3. 说说 — 随机艺术效果"></a>3. 说说 — 随机艺术效果</h3><p><img src="https://tzyy-1330068502.cos.ap-beijing.myqcloud.com/AI%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8D%9A%E5%AE%A2%E5%9B%BE%E7%89%87/homepage-shuoshuo.png" alt="说说界面" style="width:100%"></p><p>这个是重点——说说页面里的每条卡片 <span class='p red'>样式都是随机的</span>。</p><p>不是固定的模板套用，而是每次构建时根据内容自动分配不同的视觉效果：</p><details class="folding-tag" orange><summary> 样式有哪些 </summary>              <div class='content'>              <ul><li>极光渐变背景 + 描边</li><li>樱花粉色调</li><li>浅蓝渐变 + 水波纹理</li><li>车票风格（虚线边框 + TICKET 水印）</li><li>信封样式</li><li>磨砂玻璃效果</li><li>复古便签</li><li>糖果条纹</li><li>霓虹描边</li><li>日系手账风</li><li>水彩晕染</li></ul><p>每种样式都有独特的颜色、阴影、装饰元素和字体效果。</p>              </div>            </details><p>这些样式的设计灵感来自原 Hexo 博客的 Butterfly 标签体系——特别是 Akilar 的糖果屋风格，擅长用 CSS 创造富有情感色彩的文字视觉效果。</p><h3 id="4-其他功能"><a href="#4-其他功能" class="headerlink" title="4. 其他功能"></a>4. 其他功能</h3><ul><li><strong>相册</strong>：三个相册卡片，第一个收录了 30 张动漫图片</li><li><strong>侧边栏折叠</strong>：右上角按钮一键收起，只留图标导航</li><li><strong>移动端适配</strong>：768px / 480px 两档响应式，表格横向滚动，代码块缩小</li><li><strong>代码高亮</strong>：highlight.js 自动着色，支持多种语言</li><li><strong>天气特效</strong>：右下角可切换雨天模式</li></ul><hr><h2 id="技术栈一览"><a href="#技术栈一览" class="headerlink" title="技术栈一览"></a>技术栈一览</h2><div class="table-container"><table><thead><tr><th>环节</th><th>工具</th></tr></thead><tbody><tr><td>主页设计</td><td>OpenAI Codex</td></tr><tr><td>碎片页面</td><td>Cursor</td></tr><tr><td>文章体系 + CSS</td><td>Claude Code + DeepSeek V4 Pro</td></tr><tr><td>识图辅助</td><td>千问 VL 模型</td></tr><tr><td>手机操控</td><td>cc-connect + 微信</td></tr><tr><td>配置管理</td><td>CC Switch</td></tr><tr><td>部署平台</td><td>Vercel</td></tr><tr><td>图片存储</td><td>腾讯云 COS</td></tr></tbody></table></div><hr><h2 id="与旧博客的关系"><a href="#与旧博客的关系" class="headerlink" title="与旧博客的关系"></a>与旧博客的关系</h2><p>原 Hexo 博客 <code>bistutzyy.github.io</code> 保持不变，新创作屋独立部署在 Vercel。</p><p>两者的定位不同：</p><div class="note info flat"><p><strong>旧博客</strong> — Hexo 框架 + Butterfly 主题，文章同步更新，作为传统博客的保留地。</p><p><strong>新创作屋</strong> — 纯静态 HTML + Python 构建，更自由、更轻量、完全由自己定制。</p></div><hr><h2 id="后续计划"><a href="#后续计划" class="headerlink" title="后续计划"></a>后续计划</h2><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>文章迁移 — 21 篇文章已从 Hexo 博客完整迁移</p>            </div><div class='checkbox checked green'><input type="checkbox" checked="checked"/>            <p>说说迁移 — 5 条说说已迁移，带随机艺术效果</p>            </div><div class='checkbox checked blue'><input type="checkbox" checked="checked"/>            <p>相册搭建 — 三个相册已创建，第一个收录动漫图片</p>            </div><div class='checkbox'><input type="checkbox" />            <p>更多相册 — 生活碎片、旅行街景待填充</p>            </div><div class='checkbox'><input type="checkbox" />            <p>图片上传 — markdown 直接引 COS 链接</p>            </div><hr><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="note success flat"><p>一天时间，三个 AI 工具分工协作，从零搭建了一个完整的个人创作屋。</p><p>最让我惊喜的是：<strong>Vibe Coding 让”建站”这件事变得前所未有的自由</strong>。不需要纠结框架选型、不需要手写大量重复 CSS、不需要在配置文件里迷失——我只需要描述我想要什么，AI 助手们各司其职把它实现出来。</p><p>Codex 负责视觉框架，Cursor 处理碎片页面，Claude Code 管理内容体系——每个工具都在自己最擅长的领域发挥作用。</p><p>新站地址：<mark class="hl-label blue"><a href="https://tzyy11.vercel.app">https://tzyy11.vercel.app</a></mark></p><p>欢迎来逛。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Claude Code </tag>
+            
+            <tag> VibeCoding </tag>
+            
+            <tag> Codex </tag>
+            
+            <tag> Cursor </tag>
+            
+            <tag> Vercel </tag>
+            
+            <tag> 个人主页 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软件工程概论实验——DeepL语言翻译平台系统分析与设计</title>
       <link href="/2026/05/15/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA-DeepL%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C/"/>
       <url>/2026/05/15/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%AE%BA-DeepL%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C/</url>
