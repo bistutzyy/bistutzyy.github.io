@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>71 个品牌设计系统一键注入——awesome-design-md 做成 Claude Code Skill</title>
+      <link href="/2026/05/18/awesome-design-md-skill/"/>
+      <url>/2026/05/18/awesome-design-md-skill/</url>
+      
+        <content type="html"><![CDATA[<div class="note info flat"><p>项目地址：<a href="https://github.com/VoltAgent/awesome-design-md">github.com/VoltAgent/awesome-design-md</a> — 72,000+ Stars，MIT 许可证</p></div><hr><h2 id="这是什么？"><a href="#这是什么？" class="headerlink" title="这是什么？"></a>这是什么？</h2><p><strong>awesome-design-md</strong> 是 VoltAgent 团队维护的开源仓库，把 <strong>71 个知名产品</strong> 的设计系统（配色、字体、间距、组件样式、阴影、响应式规则）提炼成 AI 能直接阅读的 <strong>DESIGN.md</strong> 文件。</p><p>你选一个品牌，把它的 <code>DESIGN.md</code> 放进项目根目录，然后对 Claude Code 说”请根据 DESIGN.md 的设计规范生成界面”——AI 就会按那个品牌的风格来写代码。</p><hr><h2 id="覆盖的品牌（71-个，9-大类）"><a href="#覆盖的品牌（71-个，9-大类）" class="headerlink" title="覆盖的品牌（71 个，9 大类）"></a>覆盖的品牌（71 个，9 大类）</h2><details class="folding-tag" green><summary> 点击展开全部品牌列表 </summary>              <div class='content'>              <h3 id="AI-amp-LLM"><a href="#AI-amp-LLM" class="headerlink" title="AI &amp; LLM"></a>AI &amp; LLM</h3><p>Claude、Cohere、Cursor、ElevenLabs、Minimax、Mistral AI、Ollama、OpenCode AI、Replicate、RunwayML、Together AI、VoltAgent、xAI</p><h3 id="开发者工具-amp-IDE"><a href="#开发者工具-amp-IDE" class="headerlink" title="开发者工具 &amp; IDE"></a>开发者工具 &amp; IDE</h3><p>Expo、Lovable、Raycast、Superhuman、Vercel、Warp</p><h3 id="设计-amp-创意工具"><a href="#设计-amp-创意工具" class="headerlink" title="设计 &amp; 创意工具"></a>设计 &amp; 创意工具</h3><p>Airtable、Clay、Figma、Framer、Miro、Webflow</p><h3 id="后端、数据库-amp-DevOps"><a href="#后端、数据库-amp-DevOps" class="headerlink" title="后端、数据库 &amp; DevOps"></a>后端、数据库 &amp; DevOps</h3><p>ClickHouse、Composio、HashiCorp、MongoDB、PostHog、Sanity、Sentry、Supabase</p><h3 id="生产力-amp-SaaS"><a href="#生产力-amp-SaaS" class="headerlink" title="生产力 &amp; SaaS"></a>生产力 &amp; SaaS</h3><p>Cal.com、Intercom、Linear、Mintlify、Notion、Resend、Zapier</p><h3 id="金融科技-amp-加密货币"><a href="#金融科技-amp-加密货币" class="headerlink" title="金融科技 &amp; 加密货币"></a>金融科技 &amp; 加密货币</h3><p>Binance、Coinbase、Kraken、Mastercard、Revolut、Stripe、Wise</p><h3 id="电商-amp-零售"><a href="#电商-amp-零售" class="headerlink" title="电商 &amp; 零售"></a>电商 &amp; 零售</h3><p>Airbnb、Meta、Nike、Shopify、Starbucks</p><h3 id="消费科技-amp-媒体"><a href="#消费科技-amp-媒体" class="headerlink" title="消费科技 &amp; 媒体"></a>消费科技 &amp; 媒体</h3><p>Apple、HP、IBM、NVIDIA、Pinterest、PlayStation、SpaceX、Spotify、The Verge、Uber、Vodafone、WIRED</p><h3 id="汽车"><a href="#汽车" class="headerlink" title="汽车"></a>汽车</h3><p>BMW、BMW M、Bugatti、Ferrari、Lamborghini、Renault、Tesla</p>              </div>            </details><hr><h2 id="DESIGN-md-的结构——9-大模块"><a href="#DESIGN-md-的结构——9-大模块" class="headerlink" title="DESIGN.md 的结构——9 大模块"></a>DESIGN.md 的结构——9 大模块</h2><p>每个品牌的 DESIGN.md 都遵循 Google Stitch 引入的标准格式，包含 9 个章节：</p><details class="folding-tag" blue><summary> 9 大模块详解 </summary>              <div class='content'>              <div class="table-container"><table><thead><tr><th>#</th><th>模块</th><th>内容示例</th></tr></thead><tbody><tr><td>1</td><td>Visual Theme &amp; Atmosphere</td><td>“极简高对比度，冷色调技术感”</td></tr><tr><td>2</td><td>Color Palette &amp; Roles</td><td><code>--accent: #5E6AD2</code> <code>--bg-primary: #000000</code> 语义色板</td></tr><tr><td>3</td><td>Typography Rules</td><td>字体家族 + Display/H1/H2/Body/Caption 字号层级表</td></tr><tr><td>4</td><td>Component Stylings</td><td>按钮/卡片/输入框 的 default/hover/active/disabled/focus 五态样式</td></tr><tr><td>5</td><td>Layout Principles</td><td>间距比例尺 4/8/12/16/24/32/48/64px，12 列网格</td></tr><tr><td>6</td><td>Depth &amp; Elevation</td><td>0 级（平面）→ 3 级（模态弹窗）四层阴影系统</td></tr><tr><td>7</td><td>Do’s and Don’ts</td><td>“✅ 用语义色名，不要直接写 hex” 之类设计护栏</td></tr><tr><td>8</td><td>Responsive Behavior</td><td>断点 <640 / 640-1024 / >1024，触控目标 ≥44px</td></tr><tr><td>9</td><td>Agent Prompt Guide</td><td>快速颜色参考 + 现成 prompt 模板</td></tr></tbody></table></div>              </div>            </details><hr><h2 id="把它做成了-Claude-Code-Skill"><a href="#把它做成了-Claude-Code-Skill" class="headerlink" title="把它做成了 Claude Code Skill"></a>把它做成了 Claude Code Skill</h2><p>为了不用每次都去 GitHub 翻仓库，我把它封装成了一个 <strong>Claude Code Skill</strong>，存储在本地技能库中。</p><h3 id="Skill-做了什么"><a href="#Skill-做了什么" class="headerlink" title="Skill 做了什么"></a>Skill 做了什么</h3><div class="tip info"><p>Skill 文件：<code>C:\Users\lenovo\.claude\skills\design-md\SKILL.md</code>（183 行），已自动加载到 Claude Code 的技能列表。</p></div><p>核心能力：</p><ol><li><span class='p blue'>品牌检索</span> — 71 个品牌按 9 大类组织，可以说”给我 Tesla 风格”直接定位</li><li><span class='p green'>一键应用</span> — 从 GitHub clone 仓库 → 复制 DESIGN.md 到项目根目录</li><li><span class='p red'>设计护栏</span> — 自动遵循 DESIGN.md 中的 9 大模块规则生成 UI，不跑偏</li><li><span class='p purple'>视觉预览</span> — 每个品牌附带 <code>preview.html</code> + <code>preview-dark.html</code>，可在浏览器中直接看色板、字号比例、按钮样式</li></ol><h3 id="触发方式"><a href="#触发方式" class="headerlink" title="触发方式"></a>触发方式</h3><p>当在对话中说类似以下内容时，Skill 自动激活：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;做成 Linear 风格&quot;</span><br><span class="line">&quot;我想要 Apple 那种设计&quot;</span><br><span class="line">&quot;帮我参考 Stripe 的配色&quot;</span><br><span class="line">&quot;有没有适合后台管理系统的设计规范&quot;</span><br></pre></td></tr></table></figure><hr><h2 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h2><h3 id="第一步：选品牌"><a href="#第一步：选品牌" class="headerlink" title="第一步：选品牌"></a>第一步：选品牌</h3><p>告诉 Claude 你想要哪个品牌的风格，Skill 会从 71 个品牌中匹配。</p><h3 id="第二步：部署-DESIGN-md"><a href="#第二步：部署-DESIGN-md" class="headerlink" title="第二步：部署 DESIGN.md"></a>第二步：部署 DESIGN.md</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth 1 https://github.com/VoltAgent/awesome-design-md.git /tmp/awesome-design-md</span><br><span class="line"><span class="built_in">cp</span> /tmp/awesome-design-md/design-md/&lt;brand&gt;/DESIGN.md ./DESIGN.md</span><br></pre></td></tr></table></figure><h3 id="第三步：告诉-AI-用它"><a href="#第三步：告诉-AI-用它" class="headerlink" title="第三步：告诉 AI 用它"></a>第三步：告诉 AI 用它</h3><p>之后任何涉及 UI 的对话，Claude 都会自动参考项目根目录的 <code>DESIGN.md</code>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;基于 DESIGN.md 的设计规范，帮我重构首页的 Hero 区域&quot;</span><br><span class="line">&quot;把导航栏改成 DESIGN.md 里定义的组件样式&quot;</span><br><span class="line">&quot;给这个页面应用 DESIGN.md 的配色方案&quot;</span><br></pre></td></tr></table></figure><hr><h2 id="实战演示"><a href="#实战演示" class="headerlink" title="实战演示"></a>实战演示</h2><div class="note success flat"><p><strong>场景：</strong> 一个个人主页项目，想要 Linear 那种极简精准的审美风格。</p></div><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 复制 Linear 的 DESIGN.md</span></span><br><span class="line"><span class="built_in">cp</span> /tmp/awesome-design-md/design-md/linear.app/DESIGN.md ./DESIGN.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 告诉 Claude</span></span><br><span class="line"><span class="string">&quot;请根据项目根目录的 DESIGN.md，重构整个页面的配色和组件样式&quot;</span></span><br></pre></td></tr></table></figure><p>Claude 会读取 Linear 的设计规范：</p><ul><li><span class='p blue'>配色</span> — 极简黑白，紫色点缀 <code>#5E6AD2</code></li><li><span class='p blue'>字体</span> — Inter Weight 510，紧凑字间距</li><li><span class='p blue'>组件</span> — 微妙的边框、精确的圆角、克制的阴影层级</li><li><span class='p blue'>布局</span> — 精准对齐、清晰信息层级</li></ul><p>然后输出符合 Linear 风格的代码。</p><hr><h2 id="为什么值得用"><a href="#为什么值得用" class="headerlink" title="为什么值得用"></a>为什么值得用</h2><div class="note primary flat"><p>没有 DESIGN.md 时，AI 对”好看”的理解是模糊的——你只能说”做大一点””颜色亮一点”这种抽象的反馈。有了 DESIGN.md，AI 有了具体的数值参考：字号多少 px、色值是什么 hex、间距用哪个 scale 格、阴影用哪个层级。</p></div><p>核心收益：</p><div class="table-container"><table><thead><tr><th>之前</th><th>之后</th></tr></thead><tbody><tr><td>“这个卡片好看点”</td><td>“按 DESIGN.md §4 Component Stylings 中的 Card 规范”</td></tr><tr><td>“字体大一点”</td><td>“按 DESIGN.md §3 Typography 中的 H2 级别”</td></tr><tr><td>“颜色不对”</td><td>“按 DESIGN.md §2 Color Palette 中的 accent 色值”</td></tr><tr><td>每次重新描述设计</td><td>DESIGN.md 一次写入，全局生效</td></tr></tbody></table></div><hr><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li><a href="https://github.com/VoltAgent/awesome-design-md">awesome-design-md GitHub 仓库</a> — 71 个品牌的 DESIGN.md 文件</li><li><a href="https://ossinsight.io/blog/design-md-protocol-2026">DESIGN.md 协议介绍</a> — DESIGN.md 成为 GitHub 增长最快的设计标准</li><li><a href="https://voltagent.dev/docs/ai-assistants/">VoltAgent 官方文档</a> — AI 助手集成文档</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Claude Code </tag>
+            
+            <tag> Skill </tag>
+            
+            <tag> DESIGN.md </tag>
+            
+            <tag> 设计系统 </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 开源 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Claude Code MCP 实战——shadcn MCP 搭配 React Bits 给 React 项目加组件</title>
       <link href="/2026/05/18/shadcn-mcp-claude-code%E5%AE%9E%E6%88%98/"/>
       <url>/2026/05/18/shadcn-mcp-claude-code%E5%AE%9E%E6%88%98/</url>
@@ -22,6 +57,8 @@
             
             <tag> Claude Code </tag>
             
+            <tag> 前端 </tag>
+            
             <tag> MCP </tag>
             
             <tag> shadcn/ui </tag>
@@ -29,8 +66,6 @@
             <tag> React Bits </tag>
             
             <tag> React </tag>
-            
-            <tag> 前端 </tag>
             
         </tags>
       
@@ -661,9 +696,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> github </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
