@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Spoton智能信息推荐系统——全栈开发实战</title>
+      <link href="/2026/05/28/Spoton%E6%99%BA%E8%83%BD%E4%BF%A1%E6%81%AF%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"/>
+      <url>/2026/05/28/Spoton%E6%99%BA%E8%83%BD%E4%BF%A1%E6%81%AF%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E2%80%94%E2%80%94%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/</url>
+      
+        <content type="html"><![CDATA[<p>最近在做大创项目，做了一个叫 <strong>Spoton</strong> 的智能信息推荐系统，简单来说就是一个能自动抓取、分类、推荐信息的全栈平台。记录一下技术选型和实现思路。</p><div class="note info flat"><p>项目地址在 GitHub 组织 Spoton-team 下，分为前端、后端、爬虫三个独立仓库。</p></div><h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>整体分三层，数据流方向很清晰：</p><div class="mermaid-wrap"><pre class="mermaid-src" data-config="{}" hidden>    graph LR  A[Python 爬虫] --&gt;|写入| B[MySQL]  B --&gt;|读取| C[Go 后端]  C --&gt;|REST API| D[Vue3 前端]  E[Redis] --&gt;|缓存| C  C --&gt;|调用| F[Dify AI分类]  </pre></div><p>爬虫负责从学术网站、竞赛平台、技术博客抓取内容，存到 MySQL。后端从数据库读数据，通过 API 返回给前端展示。Redis 做缓存加速，Dify 做内容智能分类。</p><h2 id="后端-—-Go-Gin"><a href="#后端-—-Go-Gin" class="headerlink" title="后端 — Go + Gin"></a>后端 — Go + Gin</h2><p>后端用的 Go 1.21 + Gin 框架，经典的三层架构：</p><details class="folding-tag" blue><summary> 项目结构 </summary>              <div class='content'>              <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">backend/</span><br><span class="line">├── cmd/server/main.go     # 入口</span><br><span class="line">├── configs/config.yaml    # 配置文件</span><br><span class="line">├── internal/</span><br><span class="line">│   ├── handler/           # HTTP 处理器</span><br><span class="line">│   ├── service/           # 业务逻辑</span><br><span class="line">│   ├── repository/        # 数据访问</span><br><span class="line">│   ├── model/             # 领域模型</span><br><span class="line">│   ├── router/            # 路由注册</span><br><span class="line">│   ├── client/            # 外部服务客户端</span><br><span class="line">│   └── scheduler/         # 定时任务</span><br><span class="line">└── migrations/mysql/      # 数据库迁移</span><br></pre></td></tr></table></figure>              </div>            </details><p>技术栈：</p><ul><li><span class='p blue'>Gin</span> — HTTP 路由和中间件</li><li><span class='p blue'>go-redis</span> — Redis 缓存层</li><li><span class='p blue'>go-sql-driver/mysql</span> — MySQL 数据库驱动</li><li><span class='p blue'>robfig/cron</span> — 定时任务（每天凌晨4点跑推荐，2点跑关键词统计）</li></ul><p>数据库一共 15 张表，包括用户、信息、标签、收藏、浏览历史、搜索记录、通知、反馈、爬虫源、推荐记录等。</p><div class="note info flat"><p>后端运行在 8081 端口，前端通过 Vite dev server 的 proxy 把 /api 请求代理过去。</p></div><h2 id="前端-—-Vue-3-Element-Plus"><a href="#前端-—-Vue-3-Element-Plus" class="headerlink" title="前端 — Vue 3 + Element Plus"></a>前端 — Vue 3 + Element Plus</h2><p>前端用 Vue 3 Composition API + Vite + Element Plus + Pinia，目前是脚手架阶段，页面和组件都已经搭好框架：</p><ul><li><span class='p green'>7 个页面</span> — 首页、列表页、详情页、搜索结果、用户中心、收藏、浏览历史</li><li><span class='p green'>8 个公共组件</span> — 导航栏、搜索框、分类侧栏、信息流、筛选栏、信息卡片、通知、偏好设置弹窗</li><li><span class='p green'>5 个 Pinia Store</span> — 用户、主题、搜索、收藏、历史</li></ul><p>前端运行在 3000 端口，支持暗色模式和响应式布局。</p><h2 id="爬虫-—-Python-Scrapy"><a href="#爬虫-—-Python-Scrapy" class="headerlink" title="爬虫 — Python + Scrapy"></a>爬虫 — Python + Scrapy</h2><p>爬虫用 Python 3.11 + Scrapy 框架，写了三种爬虫：</p><details class="folding-tag" green><summary> 三种爬虫类型 </summary>              <div class='content'>              <div class="table-container"><table><thead><tr><th>爬虫</th><th>目标</th><th>说明</th></tr></thead><tbody><tr><td>AcademicSpider</td><td>学术网站</td><td>抓取学术论文、研究成果</td></tr><tr><td>CompetitionSpider</td><td>竞赛平台</td><td>抓取竞赛信息和公告</td></tr><tr><td>TechBlogSpider</td><td>技术博客</td><td>抓取技术文章和教程</td></tr></tbody></table></div>              </div>            </details><p>爬虫把数据写入 MySQL，同时支持回调 Go 后端的分类接口，让 Dify 自动给内容打标签。</p><h2 id="本地开发环境"><a href="#本地开发环境" class="headerlink" title="本地开发环境"></a>本地开发环境</h2><p>用 Docker Compose 管理 MySQL 和 Redis，一条命令启动基础设施：</p><details class="folding-tag" cyan><summary> docker-compose.yml </summary>              <div class='content'>              <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql:8.0</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">rootpassword</span></span><br><span class="line">      <span class="attr">MYSQL_DATABASE:</span> <span class="string">spoton</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;3306:3306&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis:7.2</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;6379:6379&quot;</span></span><br></pre></td></tr></table></figure>              </div>            </details><p>启动顺序：MySQL + Redis → 后端 → 前端，爬虫按需手动跑。</p><h2 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h2><div class='checkbox checked red'><input type="checkbox" checked="checked"/>            <p>前端代理端口写成了 8080，后端实际是 8081</p>            </div><div class='checkbox checked red'><input type="checkbox" checked="checked"/>            <p>Go 模块下载要用国内代理 goproxy.cn</p>            </div><div class='checkbox checked red'><input type="checkbox" checked="checked"/>            <p>Redis 在 Windows 上没有官方版本，用 tporadowski 的移植版</p>            </div><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>整个项目的技术选型还是偏主流的：Go 做后端性能好、Vue3 前端生态成熟、Scrapy 爬虫框架稳定。目前核心功能框架已经搭好，接下来主要是填充前端页面的业务逻辑和优化推荐算法。</p><div class="note primary flat"><p>项目还在持续开发中，欢迎关注后续更新。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目实战 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Go </tag>
+            
+            <tag> Vue3 </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> 全栈开发 </tag>
+            
+            <tag> 推荐系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我是如何借助 AI 学习数据库 SQL 的：一次&quot;一页一页讲&quot;的学习实践</title>
       <link href="/2026/05/24/AI-%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E5%BA%93SQL-%E4%B8%80%E9%A1%B5%E4%B8%80%E9%A1%B5%E8%AE%B2/"/>
       <url>/2026/05/24/AI-%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E5%BA%93SQL-%E4%B8%80%E9%A1%B5%E4%B8%80%E9%A1%B5%E8%AE%B2/</url>
