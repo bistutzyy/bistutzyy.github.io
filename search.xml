@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>个人总站搭建记——用 Vibe Coding 打造「桃之夭夭」全栈 Monorepo</title>
+      <title>欢迎参观我的新站点——「桃之夭夭」taozhiyy.top</title>
       <link href="/2026/06/29/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AE%B0%E2%80%94%E2%80%94VibeCoding%E6%89%93%E9%80%A0%E6%A1%83%E4%B9%8B%E5%A4%AD%E5%A4%AD%E5%85%A8%E6%A0%88Monorepo/"/>
       <url>/2026/06/29/%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%AB%99%E6%90%AD%E5%BB%BA%E8%AE%B0%E2%80%94%E2%80%94VibeCoding%E6%89%93%E9%80%A0%E6%A1%83%E4%B9%8B%E5%A4%AD%E5%A4%AD%E5%85%A8%E6%A0%88Monorepo/</url>
       
@@ -232,13 +232,13 @@
             
             <tag> 前端 </tag>
             
+            <tag> React </tag>
+            
             <tag> MCP </tag>
             
             <tag> shadcn/ui </tag>
             
             <tag> React Bits </tag>
-            
-            <tag> React </tag>
             
         </tags>
       
@@ -267,13 +267,13 @@
             
             <tag> VibeCoding </tag>
             
-            <tag> MCP </tag>
-            
             <tag> React </tag>
             
             <tag> Vite </tag>
             
             <tag> 个人主页 </tag>
+            
+            <tag> MCP </tag>
             
             <tag> Codex </tag>
             
@@ -869,9 +869,9 @@
       
         <tags>
             
-            <tag> blog </tag>
-            
             <tag> github </tag>
+            
+            <tag> blog </tag>
             
         </tags>
       
